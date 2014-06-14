@@ -9,11 +9,13 @@
 #import "LAppDelegate.h"
 #import "LunchConfigViewController.h"
 #import "StyleUtil.h"
+#import <MagicalRecord/CoreData+MagicalRecord.h>
 
 @implementation LAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"EatUpModel"];
     [self setupAppearance];
     return YES;
 }

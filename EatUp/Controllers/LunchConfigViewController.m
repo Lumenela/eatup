@@ -185,6 +185,13 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 }
 
 
+
+- (float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0;
+}
+
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == SectionIndexFind) {
@@ -218,6 +225,14 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 - (void)findCompany:(id)sender
 {
     [self performSegueWithIdentifier:FindCompanySegueId sender:self];
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 1)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
 }
 
 

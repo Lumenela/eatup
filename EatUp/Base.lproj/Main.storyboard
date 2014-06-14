@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="699" y="872"/>
         </scene>
-        <!--View Controller - Компании-->
+        <!--Companies View Controller - Компании-->
         <scene sceneID="QPK-fG-SI4">
             <objects>
-                <viewController id="SJe-Nu-ubl" sceneMemberID="viewController">
+                <viewController id="SJe-Nu-ubl" customClass="CompaniesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vti-hG-vEB"/>
                         <viewControllerLayoutGuide type="bottom" id="HO5-hG-D2R"/>
@@ -201,7 +201,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="89" id="Zy8-Fu-00f">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CompanyCellId" rowHeight="89" id="Zy8-Fu-00f" customClass="CompanyCell">
                                         <rect key="frame" x="0.0" y="86" width="320" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zy8-Fu-00f" id="4iE-ee-fJz">
@@ -216,16 +216,75 @@
                                                         <color key="titleColor" red="0.3411764706" green="0.25490196079999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="join:" destination="Zy8-Fu-00f" eventType="touchUpInside" id="88y-Kw-JgN"/>
+                                                    </connections>
                                                 </button>
+                                                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x1h-Ud-3K0">
+                                                    <rect key="frame" x="9" y="9" width="183" height="55"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="5" id="xCo-ID-yAz">
+                                                        <size key="itemSize" width="55" height="55"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PersonCellId" id="iw6-S8-Wsx" customClass="PersonInCompanyCell">
+                                                            <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vqw-yF-dLl">
+                                                                        <rect key="frame" x="5" y="5" width="45" height="45"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <connections>
+                                                                <outlet property="imageView" destination="vqw-yF-dLl" id="pjc-l6-yON"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="Zy8-Fu-00f" id="uWv-UP-sT7"/>
+                                                    </connections>
+                                                </collectionView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfk-Ft-zEq">
+                                                    <rect key="frame" x="15" y="65" width="301" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.3411764706" green="0.25490196079999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="collectionView" destination="x1h-Ud-3K0" id="1GU-dU-QyP"/>
+                                            <outlet property="descriptionLabel" destination="wfk-Ft-zEq" id="PiR-SM-rye"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="SJe-Nu-ubl" id="TeM-dj-mep"/>
+                                    <outlet property="delegate" destination="SJe-Nu-ubl" id="FRm-u2-d6U"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Компании" id="7eH-yK-rmF"/>
+                    <navigationItem key="navigationItem" title="Компании" id="7eH-yK-rmF">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="vPD-AM-les"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="6qb-OG-2ZH" id="w5L-FH-ssO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvr-2r-Yy1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

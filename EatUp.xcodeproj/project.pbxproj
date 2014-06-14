@@ -35,7 +35,14 @@
 		A1A22ABD194C9C6D00A9B014 /* PopUpPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A22ABC194C9C6D00A9B014 /* PopUpPicker.xib */; };
 		A1A22AC0194C9D2A00A9B014 /* PopUpWithBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22ABF194C9D2A00A9B014 /* PopUpWithBar.m */; };
 		A1A22AC3194CA87C00A9B014 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AC2194CA87C00A9B014 /* UIImage+Additions.m */; };
-		A1A22AC6194CAA1400A9B014 /* GroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AC5194CAA1400A9B014 /* GroupCell.m */; };
+		A1A22AC6194CAA1400A9B014 /* CompanyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AC5194CAA1400A9B014 /* CompanyCell.m */; };
+		A1A22AC9194CB4DB00A9B014 /* CompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AC8194CB4DB00A9B014 /* CompaniesViewController.m */; };
+		A1A22ACB194CB56B00A9B014 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A22ACA194CB56B00A9B014 /* CoreData.framework */; };
+		A1A22ACE194CB58A00A9B014 /* EatUpModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1A22ACC194CB58A00A9B014 /* EatUpModel.xcdatamodeld */; };
+		A1A22AD1194CB79A00A9B014 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AD0194CB79A00A9B014 /* Person.m */; };
+		A1A22AD4194CB79A00A9B014 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AD3194CB79A00A9B014 /* Company.m */; };
+		A1A22AD7194CB79B00A9B014 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AD6194CB79B00A9B014 /* Place.m */; };
+		A1A22ADA194CBC6D00A9B014 /* PersonInCompanyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AD9194CBC6D00A9B014 /* PersonInCompanyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +100,21 @@
 		A1A22ABF194C9D2A00A9B014 /* PopUpWithBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpWithBar.m; sourceTree = "<group>"; };
 		A1A22AC1194CA87C00A9B014 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
 		A1A22AC2194CA87C00A9B014 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
-		A1A22AC4194CAA1400A9B014 /* GroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupCell.h; sourceTree = "<group>"; };
-		A1A22AC5194CAA1400A9B014 /* GroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupCell.m; sourceTree = "<group>"; };
+		A1A22AC4194CAA1400A9B014 /* CompanyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyCell.h; sourceTree = "<group>"; };
+		A1A22AC5194CAA1400A9B014 /* CompanyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyCell.m; sourceTree = "<group>"; };
+		A1A22AC7194CB4DB00A9B014 /* CompaniesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesViewController.h; sourceTree = "<group>"; };
+		A1A22AC8194CB4DB00A9B014 /* CompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompaniesViewController.m; sourceTree = "<group>"; };
+		A1A22ACA194CB56B00A9B014 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A1A22ACD194CB58A00A9B014 /* EatUpModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EatUpModel.xcdatamodel; sourceTree = "<group>"; };
+		A1A22ACF194CB79A00A9B014 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		A1A22AD0194CB79A00A9B014 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		A1A22AD2194CB79A00A9B014 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		A1A22AD3194CB79A00A9B014 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		A1A22AD5194CB79B00A9B014 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		A1A22AD6194CB79B00A9B014 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		A1A22AD8194CBC6D00A9B014 /* PersonInCompanyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInCompanyCell.h; sourceTree = "<group>"; };
+		A1A22AD9194CBC6D00A9B014 /* PersonInCompanyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInCompanyCell.m; sourceTree = "<group>"; };
+		A1A22ADB194CBF0900A9B014 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D20C37AF59234D3C9C143A33 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A22ACB194CB56B00A9B014 /* CoreData.framework in Frameworks */,
 				A1A22A65194C455000A9B014 /* CoreGraphics.framework in Frameworks */,
 				A1A22A67194C455000A9B014 /* UIKit.framework in Frameworks */,
 				A1A22A63194C455000A9B014 /* Foundation.framework in Frameworks */,
@@ -146,6 +167,8 @@
 		A1A22A61194C455000A9B014 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1A22ADB194CBF0900A9B014 /* QuartzCore.framework */,
+				A1A22ACA194CB56B00A9B014 /* CoreData.framework */,
 				A1A22A62194C455000A9B014 /* Foundation.framework */,
 				A1A22A64194C455000A9B014 /* CoreGraphics.framework */,
 				A1A22A66194C455000A9B014 /* UIKit.framework */,
@@ -206,6 +229,8 @@
 		A1A22A97194C555B00A9B014 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A1A22AC7194CB4DB00A9B014 /* CompaniesViewController.h */,
+				A1A22AC8194CB4DB00A9B014 /* CompaniesViewController.m */,
 				A1A22A9A194C556F00A9B014 /* LoginViewController.h */,
 				A1A22A9B194C556F00A9B014 /* LoginViewController.m */,
 				A1A22A9D194C558A00A9B014 /* LunchConfigViewController.h */,
@@ -217,6 +242,13 @@
 		A1A22A98194C555B00A9B014 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A1A22AD2194CB79A00A9B014 /* Company.h */,
+				A1A22AD3194CB79A00A9B014 /* Company.m */,
+				A1A22ACC194CB58A00A9B014 /* EatUpModel.xcdatamodeld */,
+				A1A22ACF194CB79A00A9B014 /* Person.h */,
+				A1A22AD0194CB79A00A9B014 /* Person.m */,
+				A1A22AD5194CB79B00A9B014 /* Place.h */,
+				A1A22AD6194CB79B00A9B014 /* Place.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,8 +268,10 @@
 				A1A22AB5194C8A2300A9B014 /* TableHeaderView.m */,
 				A1A22AB1194C830C00A9B014 /* TimeCell.h */,
 				A1A22AB2194C830C00A9B014 /* TimeCell.m */,
-				A1A22AC4194CAA1400A9B014 /* GroupCell.h */,
-				A1A22AC5194CAA1400A9B014 /* GroupCell.m */,
+				A1A22AC4194CAA1400A9B014 /* CompanyCell.h */,
+				A1A22AC5194CAA1400A9B014 /* CompanyCell.m */,
+				A1A22AD8194CBC6D00A9B014 /* PersonInCompanyCell.h */,
+				A1A22AD9194CBC6D00A9B014 /* PersonInCompanyCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,10 +433,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1A22AC6194CAA1400A9B014 /* GroupCell.m in Sources */,
+				A1A22ACE194CB58A00A9B014 /* EatUpModel.xcdatamodeld in Sources */,
+				A1A22AC9194CB4DB00A9B014 /* CompaniesViewController.m in Sources */,
+				A1A22AC6194CAA1400A9B014 /* CompanyCell.m in Sources */,
 				A1A22AA6194C5C4800A9B014 /* Common.m in Sources */,
 				A1A22ABB194C9C5F00A9B014 /* PopUpView.m in Sources */,
 				A1A22A9C194C556F00A9B014 /* LoginViewController.m in Sources */,
+				A1A22AD1194CB79A00A9B014 /* Person.m in Sources */,
 				A1A22AB3194C830C00A9B014 /* TimeCell.m in Sources */,
 				A1A22AC0194C9D2A00A9B014 /* PopUpWithBar.m in Sources */,
 				A1A22AAA194C5ECA00A9B014 /* StyleUtil.m in Sources */,
@@ -411,9 +448,12 @@
 				A1A22AB6194C8A2300A9B014 /* TableHeaderView.m in Sources */,
 				A1A22AA3194C56B000A9B014 /* EatUpService.m in Sources */,
 				A1A22AAD194C5EF300A9B014 /* UIColor+Additions.m in Sources */,
+				A1A22AD7194CB79B00A9B014 /* Place.m in Sources */,
 				A1A22A9F194C558A00A9B014 /* LunchConfigViewController.m in Sources */,
+				A1A22ADA194CBC6D00A9B014 /* PersonInCompanyCell.m in Sources */,
 				A1A22A73194C455000A9B014 /* LAppDelegate.m in Sources */,
 				A1A22AC3194CA87C00A9B014 /* UIImage+Additions.m in Sources */,
+				A1A22AD4194CB79A00A9B014 /* Company.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +672,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A1A22ACC194CB58A00A9B014 /* EatUpModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A1A22ACD194CB58A00A9B014 /* EatUpModel.xcdatamodel */,
+			);
+			currentVersion = A1A22ACD194CB58A00A9B014 /* EatUpModel.xcdatamodel */;
+			path = EatUpModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A1A22A57194C455000A9B014 /* Project object */;
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Company" representedClassName="Company" syncable="YES">
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="person" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="company" inverseEntity="Person" syncable="YES"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="company" inverseEntity="Place" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="imageURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="company" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Company" inverseName="person" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <entity name="Place" representedClassName="Place" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="company" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Company" inverseName="place" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Company" positionX="-54" positionY="18" width="128" height="88"/>
+        <element name="Place" positionX="-36" positionY="27" width="128" height="73"/>
+    </elements>
+</model>
