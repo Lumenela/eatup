@@ -31,6 +31,9 @@
 		A1A22AB3194C830C00A9B014 /* TimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AB2194C830C00A9B014 /* TimeCell.m */; };
 		A1A22AB6194C8A2300A9B014 /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AB5194C8A2300A9B014 /* TableHeaderView.m */; };
 		A1A22AB8194C8A3400A9B014 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A22AB7194C8A3400A9B014 /* HeaderView.xib */; };
+		A1A22ABB194C9C5F00A9B014 /* PopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22ABA194C9C5F00A9B014 /* PopUpView.m */; };
+		A1A22ABD194C9C6D00A9B014 /* PopUpPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A22ABC194C9C6D00A9B014 /* PopUpPicker.xib */; };
+		A1A22AC0194C9D2A00A9B014 /* PopUpWithBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22ABF194C9D2A00A9B014 /* PopUpWithBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,11 @@
 		A1A22AB4194C8A2300A9B014 /* TableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableHeaderView.h; sourceTree = "<group>"; };
 		A1A22AB5194C8A2300A9B014 /* TableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableHeaderView.m; sourceTree = "<group>"; };
 		A1A22AB7194C8A3400A9B014 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		A1A22AB9194C9C5F00A9B014 /* PopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpView.h; sourceTree = "<group>"; };
+		A1A22ABA194C9C5F00A9B014 /* PopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpView.m; sourceTree = "<group>"; };
+		A1A22ABC194C9C6D00A9B014 /* PopUpPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpPicker.xib; sourceTree = "<group>"; };
+		A1A22ABE194C9D2A00A9B014 /* PopUpWithBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpWithBar.h; sourceTree = "<group>"; };
+		A1A22ABF194C9D2A00A9B014 /* PopUpWithBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpWithBar.m; sourceTree = "<group>"; };
 		D20C37AF59234D3C9C143A33 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -210,13 +218,18 @@
 		A1A22A99194C555B00A9B014 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1A22AB7194C8A3400A9B014 /* HeaderView.xib */,
 				A1A22AAE194C82FA00A9B014 /* PlaceCell.h */,
 				A1A22AAF194C82FA00A9B014 /* PlaceCell.m */,
-				A1A22AB1194C830C00A9B014 /* TimeCell.h */,
-				A1A22AB2194C830C00A9B014 /* TimeCell.m */,
+				A1A22ABC194C9C6D00A9B014 /* PopUpPicker.xib */,
+				A1A22AB9194C9C5F00A9B014 /* PopUpView.h */,
+				A1A22ABA194C9C5F00A9B014 /* PopUpView.m */,
+				A1A22ABE194C9D2A00A9B014 /* PopUpWithBar.h */,
+				A1A22ABF194C9D2A00A9B014 /* PopUpWithBar.m */,
 				A1A22AB4194C8A2300A9B014 /* TableHeaderView.h */,
 				A1A22AB5194C8A2300A9B014 /* TableHeaderView.m */,
-				A1A22AB7194C8A3400A9B014 /* HeaderView.xib */,
+				A1A22AB1194C830C00A9B014 /* TimeCell.h */,
+				A1A22AB2194C830C00A9B014 /* TimeCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,6 +336,7 @@
 				A1A22A7B194C455000A9B014 /* Images.xcassets in Resources */,
 				A1A22A6D194C455000A9B014 /* InfoPlist.strings in Resources */,
 				A1A22A76194C455000A9B014 /* Main.storyboard in Resources */,
+				A1A22ABD194C9C6D00A9B014 /* PopUpPicker.xib in Resources */,
 				A1A22AB8194C8A3400A9B014 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,8 +390,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1A22AA6194C5C4800A9B014 /* Common.m in Sources */,
+				A1A22ABB194C9C5F00A9B014 /* PopUpView.m in Sources */,
 				A1A22A9C194C556F00A9B014 /* LoginViewController.m in Sources */,
 				A1A22AB3194C830C00A9B014 /* TimeCell.m in Sources */,
+				A1A22AC0194C9D2A00A9B014 /* PopUpWithBar.m in Sources */,
 				A1A22AAA194C5ECA00A9B014 /* StyleUtil.m in Sources */,
 				A1A22AB0194C82FA00A9B014 /* PlaceCell.m in Sources */,
 				A1A22A6F194C455000A9B014 /* main.m in Sources */,

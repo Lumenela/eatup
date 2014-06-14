@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EatUp/Controllers/LunchConfigViewController.m"
-            timestampString = "424450672.997992"
+            timestampString = "424452682.057631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EatUp/Controllers/LunchConfigViewController.m"
-            timestampString = "424450672.997992"
+            timestampString = "424452339.242056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EatUp/Controllers/LunchConfigViewController.m"
-            timestampString = "424450748.856941"
+            timestampString = "424452682.057631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "-tableView:didDeselectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>

@@ -11,6 +11,7 @@
 #import "TimeCell.h"
 #import "TableHeaderView.h"
 #import "StyleUtil.h"
+#import "PopUpWithBar.h"
 
 
 typedef NS_ENUM(NSInteger, SectionIndex) {
@@ -21,11 +22,16 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 
 #define SECTION_COUNT 3
 
-@interface LunchConfigViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface LunchConfigViewController ()<UITableViewDelegate, UITableViewDataSource, PickerDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+
 @property (nonatomic, strong) NSArray *places;
 @property (nonatomic, strong) NSString *selectedPlace;
+
+@property (nonatomic, strong) PopUpWithBar *pickerPopUp;
+@property (nonatomic, strong) NSDate *selectedDate;
+@property (nonatomic, strong) TimeCell *timeCell;
 
 @end
 
@@ -44,13 +50,22 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 {
     [super viewDidLoad];
     self.places = @[@"Rest room", @"Лидо", @"Налибоки", @"Колесо"];
+
+    NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"PopUpPicker" owner:nil options:nil];
+    self.pickerPopUp = [objects objectAtIndex:0];
+    self.pickerPopUp.delegate = self;
+    [self.pickerPopUp setFrame:CGRectMake(0, self.view.frame.size.height, self.pickerPopUp.frame.size.width, self.pickerPopUp.frame.size.height)];
+    [self.pickerPopUp setDisablesScreen:YES];
+    [self.view addSubview:self.pickerPopUp];
+    
+    
+    self.selectedDate = [NSDate date];
 }
 
-
-- (void)didReceiveMemoryWarning
+- (void)didPickDate:(NSDate *)date
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.selectedDate = date;
+    self.timeCell.time = date;
 }
 
 
@@ -98,7 +113,8 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
                 cell = [[TimeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TimeCellId];
             }
             // load last time
-            cell.time = [NSDate date];
+            cell.time = self.selectedDate;
+            self.timeCell = cell;
             return cell;
         }
         case SectionIndexPlace: {
@@ -125,7 +141,8 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 {    
     switch (indexPath.section) {
         case SectionIndexTime: {
-        
+            [self.pickerPopUp show];
+            break;
         }
         case SectionIndexPlace: {
             NSString *place = [self.places objectAtIndex:indexPath.row];
@@ -135,7 +152,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
             break;
         }
         case SectionIndexFind: {
-            
+            break;
         }
     }
 }
@@ -145,7 +162,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 {
     switch (indexPath.section) {
         case SectionIndexTime: {
-            
+            break;
         }
         case SectionIndexPlace: {
             self.selectedPlace = nil;
@@ -154,7 +171,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
             break;
         }
         case SectionIndexFind: {
-            
+            break;
         }
     }
 }

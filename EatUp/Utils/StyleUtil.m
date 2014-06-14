@@ -28,7 +28,7 @@
 
 + (UIFont *)headlineFont
 {
-    return [UIFont fontWithName:@"AvenirNext-Medium" size:17.0];
+    return [UIFont fontWithName:@"AvenirNext-Medium" size:20.0];
 }
 
 + (UIFont *)bigTitleFont
