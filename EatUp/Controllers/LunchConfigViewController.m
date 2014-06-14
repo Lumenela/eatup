@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *places;
+@property (nonatomic, strong) NSString *selectedPlace;
 
 @end
 
@@ -106,7 +107,13 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
             if (!cell) {
                 cell = [[PlaceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PlaceCellId];
             }
-            cell.place = [self.places objectAtIndex:indexPath.row];
+            NSString *place = [self.places objectAtIndex:indexPath.row];
+            cell.place = place;
+            if ([place isEqualToString:self.selectedPlace]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
             return cell;
         }   
     }
@@ -121,7 +128,30 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
         
         }
         case SectionIndexPlace: {
+            NSString *place = [self.places objectAtIndex:indexPath.row];
+            self.selectedPlace = place;
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            break;
+        }
+        case SectionIndexFind: {
             
+        }
+    }
+}
+
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case SectionIndexTime: {
+            
+        }
+        case SectionIndexPlace: {
+            self.selectedPlace = nil;
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            break;
         }
         case SectionIndexFind: {
             

@@ -142,6 +142,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.70980392160000005" green="0.4039215686" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="Jb3-S1-RJz" id="ZAL-X8-Pt3"/>
                                         </connections>

@@ -22,17 +22,17 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.checkbox = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
-        [self setupCheckbox];
+        //self.checkbox = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+        // [self setupCheckbox];
     }
     return self;
 }
 
 - (void)awakeFromNib
 {
-    self.checkbox = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
-    [self setupCheckbox];
-    self.accessoryView = self.checkbox;
+    //    self.checkbox = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    //[self setupCheckbox];
+    //self.accessoryView = self.checkbox;
 }
 
 - (void)setupCheckbox
