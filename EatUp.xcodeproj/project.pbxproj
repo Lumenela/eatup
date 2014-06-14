@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FE41AC8A2DF41718A80735C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 436AE4C53BBE468CAB76CD7B /* libPods.a */; };
+		A1A22A63194C455000A9B014 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A22A62194C455000A9B014 /* Foundation.framework */; };
+		A1A22A65194C455000A9B014 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A22A64194C455000A9B014 /* CoreGraphics.framework */; };
+		A1A22A67194C455000A9B014 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A22A66194C455000A9B014 /* UIKit.framework */; };
+		A1A22A6D194C455000A9B014 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1A22A6B194C455000A9B014 /* InfoPlist.strings */; };
+		A1A22A6F194C455000A9B014 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22A6E194C455000A9B014 /* main.m */; };
+		A1A22A73194C455000A9B014 /* LAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22A72194C455000A9B014 /* LAppDelegate.m */; };
+		A1A22A76194C455000A9B014 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A22A74194C455000A9B014 /* Main.storyboard */; };
+		A1A22A7B194C455000A9B014 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A22A7A194C455000A9B014 /* Images.xcassets */; };
+		A1A22A82194C455000A9B014 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A22A81194C455000A9B014 /* XCTest.framework */; };
+		A1A22A83194C455000A9B014 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A22A62194C455000A9B014 /* Foundation.framework */; };
+		A1A22A84194C455000A9B014 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A22A66194C455000A9B014 /* UIKit.framework */; };
+		A1A22A8C194C455000A9B014 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1A22A8A194C455000A9B014 /* InfoPlist.strings */; };
+		A1A22A8E194C455000A9B014 /* EatUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22A8D194C455000A9B014 /* EatUpTests.m */; };
+		A1A22A9C194C556F00A9B014 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22A9B194C556F00A9B014 /* LoginViewController.m */; };
+		A1A22A9F194C558A00A9B014 /* LunchConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22A9E194C558A00A9B014 /* LunchConfigViewController.m */; };
+		A1A22AA3194C56B000A9B014 /* EatUpService.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AA2194C56B000A9B014 /* EatUpService.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1A22A85194C455000A9B014 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1A22A57194C455000A9B014 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1A22A5E194C455000A9B014;
+			remoteInfo = EatUp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		436AE4C53BBE468CAB76CD7B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1A22A5F194C455000A9B014 /* EatUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1A22A62194C455000A9B014 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A1A22A64194C455000A9B014 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A1A22A66194C455000A9B014 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A1A22A6A194C455000A9B014 /* EatUp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EatUp-Info.plist"; sourceTree = "<group>"; };
+		A1A22A6C194C455000A9B014 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A1A22A6E194C455000A9B014 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A1A22A70194C455000A9B014 /* EatUp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EatUp-Prefix.pch"; sourceTree = "<group>"; };
+		A1A22A71194C455000A9B014 /* LAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LAppDelegate.h; sourceTree = "<group>"; };
+		A1A22A72194C455000A9B014 /* LAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LAppDelegate.m; sourceTree = "<group>"; };
+		A1A22A75194C455000A9B014 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1A22A7A194C455000A9B014 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A1A22A80194C455000A9B014 /* EatUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1A22A81194C455000A9B014 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A1A22A89194C455000A9B014 /* EatUpTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EatUpTests-Info.plist"; sourceTree = "<group>"; };
+		A1A22A8B194C455000A9B014 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A1A22A8D194C455000A9B014 /* EatUpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EatUpTests.m; sourceTree = "<group>"; };
+		A1A22A9A194C556F00A9B014 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A1A22A9B194C556F00A9B014 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A1A22A9D194C558A00A9B014 /* LunchConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunchConfigViewController.h; sourceTree = "<group>"; };
+		A1A22A9E194C558A00A9B014 /* LunchConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunchConfigViewController.m; sourceTree = "<group>"; };
+		A1A22AA1194C56B000A9B014 /* EatUpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EatUpService.h; sourceTree = "<group>"; };
+		A1A22AA2194C56B000A9B014 /* EatUpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EatUpService.m; sourceTree = "<group>"; };
+		D20C37AF59234D3C9C143A33 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1A22A5C194C455000A9B014 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A22A65194C455000A9B014 /* CoreGraphics.framework in Frameworks */,
+				A1A22A67194C455000A9B014 /* UIKit.framework in Frameworks */,
+				A1A22A63194C455000A9B014 /* Foundation.framework in Frameworks */,
+				3FE41AC8A2DF41718A80735C /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1A22A7D194C455000A9B014 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A22A82194C455000A9B014 /* XCTest.framework in Frameworks */,
+				A1A22A84194C455000A9B014 /* UIKit.framework in Frameworks */,
+				A1A22A83194C455000A9B014 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1A22A56194C455000A9B014 = {
+			isa = PBXGroup;
+			children = (
+				A1A22A68194C455000A9B014 /* EatUp */,
+				A1A22A87194C455000A9B014 /* EatUpTests */,
+				A1A22A61194C455000A9B014 /* Frameworks */,
+				A1A22A60194C455000A9B014 /* Products */,
+				D20C37AF59234D3C9C143A33 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		A1A22A60194C455000A9B014 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1A22A5F194C455000A9B014 /* EatUp.app */,
+				A1A22A80194C455000A9B014 /* EatUpTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1A22A61194C455000A9B014 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1A22A62194C455000A9B014 /* Foundation.framework */,
+				A1A22A64194C455000A9B014 /* CoreGraphics.framework */,
+				A1A22A66194C455000A9B014 /* UIKit.framework */,
+				A1A22A81194C455000A9B014 /* XCTest.framework */,
+				436AE4C53BBE468CAB76CD7B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1A22A68194C455000A9B014 /* EatUp */ = {
+			isa = PBXGroup;
+			children = (
+				A1A22AA0194C567E00A9B014 /* Communication */,
+				A1A22A97194C555B00A9B014 /* Controllers */,
+				A1A22A98194C555B00A9B014 /* Models */,
+				A1A22A99194C555B00A9B014 /* Views */,
+				A1A22A71194C455000A9B014 /* LAppDelegate.h */,
+				A1A22A72194C455000A9B014 /* LAppDelegate.m */,
+				A1A22A74194C455000A9B014 /* Main.storyboard */,
+				A1A22A7A194C455000A9B014 /* Images.xcassets */,
+				A1A22A69194C455000A9B014 /* Supporting Files */,
+			);
+			path = EatUp;
+			sourceTree = "<group>";
+		};
+		A1A22A69194C455000A9B014 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1A22A6A194C455000A9B014 /* EatUp-Info.plist */,
+				A1A22A6B194C455000A9B014 /* InfoPlist.strings */,
+				A1A22A6E194C455000A9B014 /* main.m */,
+				A1A22A70194C455000A9B014 /* EatUp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1A22A87194C455000A9B014 /* EatUpTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1A22A8D194C455000A9B014 /* EatUpTests.m */,
+				A1A22A88194C455000A9B014 /* Supporting Files */,
+			);
+			path = EatUpTests;
+			sourceTree = "<group>";
+		};
+		A1A22A88194C455000A9B014 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1A22A89194C455000A9B014 /* EatUpTests-Info.plist */,
+				A1A22A8A194C455000A9B014 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1A22A97194C555B00A9B014 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A1A22A9A194C556F00A9B014 /* LoginViewController.h */,
+				A1A22A9B194C556F00A9B014 /* LoginViewController.m */,
+				A1A22A9D194C558A00A9B014 /* LunchConfigViewController.h */,
+				A1A22A9E194C558A00A9B014 /* LunchConfigViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A1A22A98194C555B00A9B014 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1A22A99194C555B00A9B014 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1A22AA0194C567E00A9B014 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				A1A22AA1194C56B000A9B014 /* EatUpService.h */,
+				A1A22AA2194C56B000A9B014 /* EatUpService.m */,
+			);
+			path = Communication;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1A22A5E194C455000A9B014 /* EatUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1A22A91194C455000A9B014 /* Build configuration list for PBXNativeTarget "EatUp" */;
+			buildPhases = (
+				42A4AD49A83C46D7963066CC /* Check Pods Manifest.lock */,
+				A1A22A5B194C455000A9B014 /* Sources */,
+				A1A22A5C194C455000A9B014 /* Frameworks */,
+				A1A22A5D194C455000A9B014 /* Resources */,
+				4EC71F34C0524A4983EB8C9D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EatUp;
+			productName = EatUp;
+			productReference = A1A22A5F194C455000A9B014 /* EatUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1A22A7F194C455000A9B014 /* EatUpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1A22A94194C455000A9B014 /* Build configuration list for PBXNativeTarget "EatUpTests" */;
+			buildPhases = (
+				A1A22A7C194C455000A9B014 /* Sources */,
+				A1A22A7D194C455000A9B014 /* Frameworks */,
+				A1A22A7E194C455000A9B014 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1A22A86194C455000A9B014 /* PBXTargetDependency */,
+			);
+			name = EatUpTests;
+			productName = EatUpTests;
+			productReference = A1A22A80194C455000A9B014 /* EatUpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1A22A57194C455000A9B014 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = L;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Lumenela;
+				TargetAttributes = {
+					A1A22A7F194C455000A9B014 = {
+						TestTargetID = A1A22A5E194C455000A9B014;
+					};
+				};
+			};
+			buildConfigurationList = A1A22A5A194C455000A9B014 /* Build configuration list for PBXProject "EatUp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1A22A56194C455000A9B014;
+			productRefGroup = A1A22A60194C455000A9B014 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1A22A5E194C455000A9B014 /* EatUp */,
+				A1A22A7F194C455000A9B014 /* EatUpTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1A22A5D194C455000A9B014 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A22A7B194C455000A9B014 /* Images.xcassets in Resources */,
+				A1A22A6D194C455000A9B014 /* InfoPlist.strings in Resources */,
+				A1A22A76194C455000A9B014 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1A22A7E194C455000A9B014 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A22A8C194C455000A9B014 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		42A4AD49A83C46D7963066CC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4EC71F34C0524A4983EB8C9D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1A22A5B194C455000A9B014 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A22A9C194C556F00A9B014 /* LoginViewController.m in Sources */,
+				A1A22A6F194C455000A9B014 /* main.m in Sources */,
+				A1A22AA3194C56B000A9B014 /* EatUpService.m in Sources */,
+				A1A22A9F194C558A00A9B014 /* LunchConfigViewController.m in Sources */,
+				A1A22A73194C455000A9B014 /* LAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1A22A7C194C455000A9B014 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A22A8E194C455000A9B014 /* EatUpTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1A22A86194C455000A9B014 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1A22A5E194C455000A9B014 /* EatUp */;
+			targetProxy = A1A22A85194C455000A9B014 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A1A22A6B194C455000A9B014 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1A22A6C194C455000A9B014 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A1A22A74194C455000A9B014 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1A22A75194C455000A9B014 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A1A22A8A194C455000A9B014 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1A22A8B194C455000A9B014 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1A22A8F194C455000A9B014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A1A22A90194C455000A9B014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1A22A92194C455000A9B014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D20C37AF59234D3C9C143A33 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EatUp/EatUp-Prefix.pch";
+				INFOPLIST_FILE = "EatUp/EatUp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A1A22A93194C455000A9B014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D20C37AF59234D3C9C143A33 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EatUp/EatUp-Prefix.pch";
+				INFOPLIST_FILE = "EatUp/EatUp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A1A22A95194C455000A9B014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EatUp.app/EatUp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EatUp/EatUp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EatUpTests/EatUpTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A1A22A96194C455000A9B014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EatUp.app/EatUp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EatUp/EatUp-Prefix.pch";
+				INFOPLIST_FILE = "EatUpTests/EatUpTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1A22A5A194C455000A9B014 /* Build configuration list for PBXProject "EatUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1A22A8F194C455000A9B014 /* Debug */,
+				A1A22A90194C455000A9B014 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1A22A91194C455000A9B014 /* Build configuration list for PBXNativeTarget "EatUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1A22A92194C455000A9B014 /* Debug */,
+				A1A22A93194C455000A9B014 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1A22A94194C455000A9B014 /* Build configuration list for PBXNativeTarget "EatUpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1A22A95194C455000A9B014 /* Debug */,
+				A1A22A96194C455000A9B014 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1A22A57194C455000A9B014 /* Project object */;
+}
