@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) Person *person;
 @property (nonatomic, weak) id<PersonCellDelegate> delegate;
+@property (nonatomic, assign) BOOL canInvitePeople;
 
 @end
 

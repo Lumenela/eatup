@@ -14,6 +14,7 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *photoView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UIButton *inviteButton;
 
 @end
 
@@ -27,6 +28,21 @@
     self.photoView.layer.borderWidth = 2.0f;
     self.photoView.layer.borderColor = [StyleUtil loginBackgroundColor].CGColor;
     self.photoView.backgroundColor = [UIColor blackColor];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCanInvite) name:CanInvitePeopleNotificationName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCanNotInvite) name:CannotInvitePeopleNotificationName object:nil];
+}
+
+
+- (void)handleCanInvite
+{
+    self.canInvitePeople = YES;
+}
+
+
+- (void)handleCanNotInvite
+{
+    self.canInvitePeople = NO;
 }
 
 
@@ -43,6 +59,13 @@
 - (IBAction)invite:(id)sender
 {
     [self.delegate invitePerson:self.person];
+}
+
+
+- (void)setCanInvitePeople:(BOOL)canInvitePeople
+{
+    _canInvitePeople = canInvitePeople;
+    self.inviteButton.enabled = _canInvitePeople;
 }
 
 

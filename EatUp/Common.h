@@ -14,3 +14,6 @@
 extern NSString * const AppWrapperControllerId;
 extern NSString * const FindCompanySegueId;
 extern NSString * const FindOthersSegueId;
+
+extern NSString * const CanInvitePeopleNotificationName;
+extern NSString * const CannotInvitePeopleNotificationName;

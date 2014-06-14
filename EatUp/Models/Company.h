@@ -2,20 +2,21 @@
 //  Company.h
 //  EatUp
 //
-//  Created by Sveta Dedunovich on 6/14/14.
+//  Created by Sveta Dedunovich on 6/15/14.
 //  Copyright (c) 2014 Lumenela. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Person;
+@class Person, Place;
 
 @interface Company : NSManagedObject
 
 @property (nonatomic, retain) NSDate * time;
-@property (nonatomic, retain) NSManagedObject *place;
+@property (nonatomic, retain) NSNumber * companyId;
 @property (nonatomic, retain) NSSet *person;
+@property (nonatomic, retain) Place *place;
 @end
 
 @interface Company (CoreDataGeneratedAccessors)

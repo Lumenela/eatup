@@ -12,6 +12,7 @@
 #import "TableHeaderView.h"
 #import "StyleUtil.h"
 #import "PopUpWithBar.h"
+#import "EatUpService.h"
 
 
 typedef NS_ENUM(NSInteger, SectionIndex) {
@@ -59,6 +60,10 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
     [self.view addSubview:self.pickerPopUp];
     
     self.selectedDate = [NSDate date];
+    
+    [[EatUpService sharedInstance] profileInfoWithCompletionHandler:^(id data, NSError *error) {
+        
+    }];
 }
 
 - (void)didPickDate:(NSDate *)date

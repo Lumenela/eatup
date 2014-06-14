@@ -1,20 +1,22 @@
 //
-//  Person.m
+//  Me.m
 //  EatUp
 //
 //  Created by Sveta Dedunovich on 6/15/14.
 //  Copyright (c) 2014 Lumenela. All rights reserved.
 //
 
-#import "Person.h"
-#import "Company.h"
+#import "Me.h"
+#import "Place.h"
 
 
-@implementation Person
+@implementation Me
 
 @dynamic imageURLString;
-@dynamic name;
 @dynamic userId;
-@dynamic company;
+@dynamic time;
+@dynamic startTime;
+@dynamic endTime;
+@dynamic place;
 
 @end

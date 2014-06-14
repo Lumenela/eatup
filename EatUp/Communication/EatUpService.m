@@ -7,9 +7,13 @@
 //
 
 #import "EatUpService.h"
+#import "Me.h"
+
+
+NSString * const ProfileInfoURL = @"http://10.168.0.255/Cmd.EatUp/Employees/getprofileinfo";
+
 
 @implementation EatUpService
-
 
 + (instancetype)sharedInstance
 {
@@ -25,6 +29,26 @@
 - (void)loginWithCompletionHandler:(EUCompletionHandler)onComplete
 {
     onComplete(@"token", nil);
+}
+
+
+- (void)profileInfoWithCompletionHandler:(EUCompletionHandler)onComplete
+{
+    NSDictionary *params = @{@"id": @(541)};
+    AFHTTPRequestOperation *operation = [self GET:ProfileInfoURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@", responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", nil];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation start];
+}
+
+- (void)companiesWithCompletionHandler:(EUCompletionHandler)onComplete
+{
+    
 }
 
 @end

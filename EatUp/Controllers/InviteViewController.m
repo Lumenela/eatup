@@ -18,7 +18,7 @@
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) PopUpWithBar *timePicker;
-@property (nonatomic, strong) NSDate *selectedDate;
+@property (nonatomic, strong) NSDate *time;
 @property (nonatomic, strong) TimePlaceHeaderView *timePlaceHeader;
 @property (nonatomic, strong) PlacePicker *placePicker;
 @property (nonatomic, strong) NSString *place;
@@ -83,7 +83,14 @@
         cell = [[PersonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PersonCellId];
     }
     cell.person = nil;
+    cell.canInvitePeople = [self canInviteSomeone];
     return cell;
+}
+
+
+- (BOOL)canInviteSomeone
+{
+    return self.place && self.time;
 }
 
 

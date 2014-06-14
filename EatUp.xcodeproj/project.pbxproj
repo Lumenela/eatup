@@ -39,9 +39,6 @@
 		A1A22AC9194CB4DB00A9B014 /* CompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AC8194CB4DB00A9B014 /* CompaniesViewController.m */; };
 		A1A22ACB194CB56B00A9B014 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A22ACA194CB56B00A9B014 /* CoreData.framework */; };
 		A1A22ACE194CB58A00A9B014 /* EatUpModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1A22ACC194CB58A00A9B014 /* EatUpModel.xcdatamodeld */; };
-		A1A22AD1194CB79A00A9B014 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AD0194CB79A00A9B014 /* Person.m */; };
-		A1A22AD4194CB79A00A9B014 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AD3194CB79A00A9B014 /* Company.m */; };
-		A1A22AD7194CB79B00A9B014 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AD6194CB79B00A9B014 /* Place.m */; };
 		A1A22ADA194CBC6D00A9B014 /* PersonInCompanyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AD9194CBC6D00A9B014 /* PersonInCompanyCell.m */; };
 		A1A22ADF194CCFC600A9B014 /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22ADE194CCFC600A9B014 /* InviteViewController.m */; };
 		A1A22AE2194CCFDF00A9B014 /* PersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AE1194CCFDF00A9B014 /* PersonCell.m */; };
@@ -49,6 +46,10 @@
 		A1A22AE7194CD8D200A9B014 /* TimePlaceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AE6194CD8D200A9B014 /* TimePlaceHeaderView.m */; };
 		A1A22AEA194CDE9B00A9B014 /* PlacePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AE9194CDE9B00A9B014 /* PlacePicker.m */; };
 		A1A22AEC194CDEB800A9B014 /* PlacePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A22AEB194CDEB800A9B014 /* PlacePicker.xib */; };
+		A1A22AFE194CF26300A9B014 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AFD194CF26300A9B014 /* Place.m */; };
+		A1A22B01194CF26400A9B014 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B00194CF26400A9B014 /* Company.m */; };
+		A1A22B04194CF26400A9B014 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B03194CF26400A9B014 /* Person.m */; };
+		A1A22B07194CF26400A9B014 /* Me.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B06194CF26400A9B014 /* Me.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,12 +113,6 @@
 		A1A22AC8194CB4DB00A9B014 /* CompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompaniesViewController.m; sourceTree = "<group>"; };
 		A1A22ACA194CB56B00A9B014 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A1A22ACD194CB58A00A9B014 /* EatUpModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EatUpModel.xcdatamodel; sourceTree = "<group>"; };
-		A1A22ACF194CB79A00A9B014 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		A1A22AD0194CB79A00A9B014 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		A1A22AD2194CB79A00A9B014 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
-		A1A22AD3194CB79A00A9B014 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
-		A1A22AD5194CB79B00A9B014 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
-		A1A22AD6194CB79B00A9B014 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		A1A22AD8194CBC6D00A9B014 /* PersonInCompanyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInCompanyCell.h; sourceTree = "<group>"; };
 		A1A22AD9194CBC6D00A9B014 /* PersonInCompanyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInCompanyCell.m; sourceTree = "<group>"; };
 		A1A22ADB194CBF0900A9B014 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -131,6 +126,14 @@
 		A1A22AE8194CDE9B00A9B014 /* PlacePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacePicker.h; sourceTree = "<group>"; };
 		A1A22AE9194CDE9B00A9B014 /* PlacePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacePicker.m; sourceTree = "<group>"; };
 		A1A22AEB194CDEB800A9B014 /* PlacePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlacePicker.xib; sourceTree = "<group>"; };
+		A1A22AFC194CF26300A9B014 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		A1A22AFD194CF26300A9B014 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		A1A22AFF194CF26400A9B014 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		A1A22B00194CF26400A9B014 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		A1A22B02194CF26400A9B014 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		A1A22B03194CF26400A9B014 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		A1A22B05194CF26400A9B014 /* Me.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Me.h; sourceTree = "<group>"; };
+		A1A22B06194CF26400A9B014 /* Me.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Me.m; sourceTree = "<group>"; };
 		D20C37AF59234D3C9C143A33 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,13 +263,15 @@
 		A1A22A98194C555B00A9B014 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A1A22AD2194CB79A00A9B014 /* Company.h */,
-				A1A22AD3194CB79A00A9B014 /* Company.m */,
+				A1A22AFF194CF26400A9B014 /* Company.h */,
+				A1A22B00194CF26400A9B014 /* Company.m */,
 				A1A22ACC194CB58A00A9B014 /* EatUpModel.xcdatamodeld */,
-				A1A22ACF194CB79A00A9B014 /* Person.h */,
-				A1A22AD0194CB79A00A9B014 /* Person.m */,
-				A1A22AD5194CB79B00A9B014 /* Place.h */,
-				A1A22AD6194CB79B00A9B014 /* Place.m */,
+				A1A22B05194CF26400A9B014 /* Me.h */,
+				A1A22B06194CF26400A9B014 /* Me.m */,
+				A1A22B02194CF26400A9B014 /* Person.h */,
+				A1A22B03194CF26400A9B014 /* Person.m */,
+				A1A22AFC194CF26300A9B014 /* Place.h */,
+				A1A22AFD194CF26300A9B014 /* Place.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -469,23 +474,24 @@
 				A1A22AA6194C5C4800A9B014 /* Common.m in Sources */,
 				A1A22ABB194C9C5F00A9B014 /* PopUpView.m in Sources */,
 				A1A22A9C194C556F00A9B014 /* LoginViewController.m in Sources */,
-				A1A22AD1194CB79A00A9B014 /* Person.m in Sources */,
 				A1A22AB3194C830C00A9B014 /* TimeCell.m in Sources */,
+				A1A22B07194CF26400A9B014 /* Me.m in Sources */,
 				A1A22AC0194C9D2A00A9B014 /* PopUpWithBar.m in Sources */,
 				A1A22AAA194C5ECA00A9B014 /* StyleUtil.m in Sources */,
 				A1A22AB0194C82FA00A9B014 /* PlaceCell.m in Sources */,
+				A1A22B04194CF26400A9B014 /* Person.m in Sources */,
 				A1A22AE2194CCFDF00A9B014 /* PersonCell.m in Sources */,
 				A1A22A6F194C455000A9B014 /* main.m in Sources */,
 				A1A22AB6194C8A2300A9B014 /* TableHeaderView.m in Sources */,
 				A1A22AA3194C56B000A9B014 /* EatUpService.m in Sources */,
 				A1A22AE7194CD8D200A9B014 /* TimePlaceHeaderView.m in Sources */,
 				A1A22AAD194C5EF300A9B014 /* UIColor+Additions.m in Sources */,
-				A1A22AD7194CB79B00A9B014 /* Place.m in Sources */,
 				A1A22A9F194C558A00A9B014 /* LunchConfigViewController.m in Sources */,
+				A1A22B01194CF26400A9B014 /* Company.m in Sources */,
+				A1A22AFE194CF26300A9B014 /* Place.m in Sources */,
 				A1A22ADA194CBC6D00A9B014 /* PersonInCompanyCell.m in Sources */,
 				A1A22A73194C455000A9B014 /* LAppDelegate.m in Sources */,
 				A1A22AC3194CA87C00A9B014 /* UIImage+Additions.m in Sources */,
-				A1A22AD4194CB79A00A9B014 /* Company.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

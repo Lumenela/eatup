@@ -7,13 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking/AFNetworking.h>
+
 
 typedef void (^EUCompletionHandler)(id data, NSError *error);
 
-@interface EatUpService : NSObject
+@interface EatUpService : AFHTTPRequestOperationManager
 
 + (EatUpService *)sharedInstance;
 
 - (void)loginWithCompletionHandler:(EUCompletionHandler)onComplete;
+- (void)profileInfoWithCompletionHandler:(EUCompletionHandler)onComplete;
+
+- (void)companiesWithCompletionHandler:(EUCompletionHandler)onComplete;
 
 @end
