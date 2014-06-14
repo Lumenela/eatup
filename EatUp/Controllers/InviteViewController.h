@@ -1,5 +1,5 @@
 //
-//  UIImage+Additions.h
+//  InviteViewController.h
 //  EatUp
 //
 //  Created by Sveta Dedunovich on 6/14/14.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define DEFAULT_SQUARE_THUMBNAIL_SIDE 45
-
-@interface UIImage (Additions)
-
-- (UIImage *)thumbnail;
+@interface InviteViewController : UIViewController
 
 @end
