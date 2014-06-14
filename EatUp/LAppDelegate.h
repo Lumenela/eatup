@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#define ApplicationDelegate ((LAppDelegate *)[UIApplication sharedApplication].delegate)
+
 @interface LAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+- (void)showMainAppView;
 
 @end

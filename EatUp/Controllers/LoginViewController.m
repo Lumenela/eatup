@@ -7,43 +7,107 @@
 //
 
 #import "LoginViewController.h"
+#import "LAppDelegate.h"
+#import "EatUpService.h"
+#import "StyleUtil.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
+
+@property (nonatomic, weak) IBOutlet UITextField *loginTextField;
+@property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
+@property (nonatomic, weak) IBOutlet UIButton *loginButton;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 
 @end
 
 @implementation LoginViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [StyleUtil loginBackgroundColor];
 }
 
-- (void)didReceiveMemoryWarning
+
+- (IBAction)login:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if ([self isDataValid]) {
+        [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
+        
+        __weak typeof(self) weakSelf = self;
+        [[EatUpService sharedInstance] loginWithCompletionHandler:^(id data, NSError *error) {
+            [MBProgressHUD hideHUDForView:ApplicationDelegate.window animated:YES];
+            if (!error) {
+                [weakSelf handleSuccessfullLogin:data];
+            } else {
+                [weakSelf handleFailedLoginWithData:data error:error];
+            }
+        }];
+    } else {
+        [self showInvalidDataHint];
+    }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (BOOL)isDataValid
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return YES;
 }
-*/
+
+
+- (void)handleSuccessfullLogin:(id)data
+{
+    //save token
+    [ApplicationDelegate showMainAppView];
+}
+
+
+- (void)handleFailedLoginWithData:(id)data error:(NSError *)error
+{
+    
+}
+
+
+- (void)showInvalidDataHint
+{
+    
+}
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    float keyboardOriginY = self.view.frame.size.height - KEYBOARD_HEIGHT;
+    float margin = 5;
+    float newTextFieldOriginY = keyboardOriginY - textField.frame.size.height - margin;
+    float deltaOriginY = textField.frame.origin.y - newTextFieldOriginY;
+    if (deltaOriginY <= 0) {
+        return;
+    }
+    float oldOffset = self.scrollView.contentOffset.y;
+    float newOffset = oldOffset + deltaOriginY;
+    
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.3 initialSpringVelocity:0.8 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            weakSelf.scrollView.contentOffset = CGPointMake(0, newOffset);
+    } completion:nil];
+    
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.3 initialSpringVelocity:0.8 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        weakSelf.scrollView.contentOffset = CGPointZero;
+    } completion:nil];
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return NO;
+}
 
 @end

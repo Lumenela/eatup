@@ -24,6 +24,11 @@
 		A1A22A9C194C556F00A9B014 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22A9B194C556F00A9B014 /* LoginViewController.m */; };
 		A1A22A9F194C558A00A9B014 /* LunchConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22A9E194C558A00A9B014 /* LunchConfigViewController.m */; };
 		A1A22AA3194C56B000A9B014 /* EatUpService.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AA2194C56B000A9B014 /* EatUpService.m */; };
+		A1A22AA6194C5C4800A9B014 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AA5194C5C4800A9B014 /* Common.m */; };
+		A1A22AAA194C5ECA00A9B014 /* StyleUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AA9194C5ECA00A9B014 /* StyleUtil.m */; };
+		A1A22AAD194C5EF300A9B014 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AAC194C5EF300A9B014 /* UIColor+Additions.m */; };
+		A1A22AB0194C82FA00A9B014 /* PlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AAF194C82FA00A9B014 /* PlaceCell.m */; };
+		A1A22AB3194C830C00A9B014 /* TimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AB2194C830C00A9B014 /* TimeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +66,16 @@
 		A1A22A9E194C558A00A9B014 /* LunchConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunchConfigViewController.m; sourceTree = "<group>"; };
 		A1A22AA1194C56B000A9B014 /* EatUpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EatUpService.h; sourceTree = "<group>"; };
 		A1A22AA2194C56B000A9B014 /* EatUpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EatUpService.m; sourceTree = "<group>"; };
+		A1A22AA4194C5C4800A9B014 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		A1A22AA5194C5C4800A9B014 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		A1A22AA8194C5ECA00A9B014 /* StyleUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleUtil.h; sourceTree = "<group>"; };
+		A1A22AA9194C5ECA00A9B014 /* StyleUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleUtil.m; sourceTree = "<group>"; };
+		A1A22AAB194C5EF300A9B014 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		A1A22AAC194C5EF300A9B014 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		A1A22AAE194C82FA00A9B014 /* PlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceCell.h; sourceTree = "<group>"; };
+		A1A22AAF194C82FA00A9B014 /* PlaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceCell.m; sourceTree = "<group>"; };
+		A1A22AB1194C830C00A9B014 /* TimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeCell.h; sourceTree = "<group>"; };
+		A1A22AB2194C830C00A9B014 /* TimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeCell.m; sourceTree = "<group>"; };
 		D20C37AF59234D3C9C143A33 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,15 +139,18 @@
 		A1A22A68194C455000A9B014 /* EatUp */ = {
 			isa = PBXGroup;
 			children = (
+				A1A22AA7194C5EB900A9B014 /* Utils */,
+				A1A22AA4194C5C4800A9B014 /* Common.h */,
+				A1A22AA5194C5C4800A9B014 /* Common.m */,
 				A1A22AA0194C567E00A9B014 /* Communication */,
 				A1A22A97194C555B00A9B014 /* Controllers */,
-				A1A22A98194C555B00A9B014 /* Models */,
-				A1A22A99194C555B00A9B014 /* Views */,
+				A1A22A7A194C455000A9B014 /* Images.xcassets */,
 				A1A22A71194C455000A9B014 /* LAppDelegate.h */,
 				A1A22A72194C455000A9B014 /* LAppDelegate.m */,
 				A1A22A74194C455000A9B014 /* Main.storyboard */,
-				A1A22A7A194C455000A9B014 /* Images.xcassets */,
+				A1A22A98194C555B00A9B014 /* Models */,
 				A1A22A69194C455000A9B014 /* Supporting Files */,
+				A1A22A99194C555B00A9B014 /* Views */,
 			);
 			path = EatUp;
 			sourceTree = "<group>";
@@ -187,6 +205,10 @@
 		A1A22A99194C555B00A9B014 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1A22AAE194C82FA00A9B014 /* PlaceCell.h */,
+				A1A22AAF194C82FA00A9B014 /* PlaceCell.m */,
+				A1A22AB1194C830C00A9B014 /* TimeCell.h */,
+				A1A22AB2194C830C00A9B014 /* TimeCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +220,17 @@
 				A1A22AA2194C56B000A9B014 /* EatUpService.m */,
 			);
 			path = Communication;
+			sourceTree = "<group>";
+		};
+		A1A22AA7194C5EB900A9B014 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A1A22AA8194C5ECA00A9B014 /* StyleUtil.h */,
+				A1A22AA9194C5ECA00A9B014 /* StyleUtil.m */,
+				A1A22AAB194C5EF300A9B014 /* UIColor+Additions.h */,
+				A1A22AAC194C5EF300A9B014 /* UIColor+Additions.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,9 +366,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A22AA6194C5C4800A9B014 /* Common.m in Sources */,
 				A1A22A9C194C556F00A9B014 /* LoginViewController.m in Sources */,
+				A1A22AB3194C830C00A9B014 /* TimeCell.m in Sources */,
+				A1A22AAA194C5ECA00A9B014 /* StyleUtil.m in Sources */,
+				A1A22AB0194C82FA00A9B014 /* PlaceCell.m in Sources */,
 				A1A22A6F194C455000A9B014 /* main.m in Sources */,
 				A1A22AA3194C56B000A9B014 /* EatUpService.m in Sources */,
+				A1A22AAD194C5EF300A9B014 /* UIColor+Additions.m in Sources */,
 				A1A22A9F194C558A00A9B014 /* LunchConfigViewController.m in Sources */,
 				A1A22A73194C455000A9B014 /* LAppDelegate.m in Sources */,
 			);

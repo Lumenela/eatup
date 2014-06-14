@@ -7,6 +7,7 @@
 //
 
 #import "LAppDelegate.h"
+#import "LunchConfigViewController.h"
 
 @implementation LAppDelegate
 
@@ -14,6 +15,14 @@
 {
     // Override point for customization after application launch.
     return YES;
+}
+
+- (void)showMainAppView
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    LunchConfigViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:AppWrapperControllerId];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
