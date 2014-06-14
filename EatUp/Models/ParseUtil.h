@@ -13,4 +13,6 @@
 
 + (Me *)meFromJson:(NSDictionary *)json;
 
++ (Place *)placeFromJson:(NSDictionary *)json;
+
 @end

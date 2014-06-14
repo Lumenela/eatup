@@ -8,10 +8,17 @@
 
 #import "EatUpService.h"
 #import "ParseUtil.h"
-//#import "Me.h"
+#import "Place.h"
+#import "LAppDelegate.h"
 
 
 NSString * const ProfileInfoURL = @"http://10.168.0.255/Cmd.EatUp/Employees/getprofileinfo";
+NSString * const PlacesUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/getplaces";
+NSString * const SendTimeAndPlaceUrl = @"10.168.0.255/Cmd.EatUp/Employees/ChangePlaceAndTime";
+
+NSString * const TimeKey = @"time";
+NSString * const PlaceKey = @"placeName";
+NSString * const IdKey = @"id";
 
 
 @implementation EatUpService
@@ -39,10 +46,14 @@ NSString * const ProfileInfoURL = @"http://10.168.0.255/Cmd.EatUp/Employees/getp
     
     __weak typeof(self) weakSelf = self;
     AFHTTPRequestOperation *operation = [self GET:ProfileInfoURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [weakSelf updateProfileWithJson:responseObject onComplete:onComplete];
+        [weakSelf updateProfileWithJson:responseObject];
+        [weakSelf placesWithCompletionHandler:^(id data, NSError *error) {
+            onComplete(nil, nil);
+        }];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
+        onComplete(nil, error);
     }];
     operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", nil];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -50,15 +61,62 @@ NSString * const ProfileInfoURL = @"http://10.168.0.255/Cmd.EatUp/Employees/getp
 }
 
 
-- (void)updateProfileWithJson:(NSDictionary *)json onComplete:(EUCompletionHandler)onComplete
+- (void)updateProfileWithJson:(NSDictionary *)json
 {
-    Me *me = [ParseUtil meFromJson:json];
-    onComplete(me, nil);
+    [ParseUtil meFromJson:json];
 }
+
+
+- (void)placesWithCompletionHandler:(EUCompletionHandler)onComplete
+{
+    __weak typeof(self) weakSelf = self;
+    AFHTTPRequestOperation *operation = [self GET:PlacesUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [weakSelf updatePlacesWithJson:responseObject];
+        onComplete(nil, nil);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        onComplete(nil, error);
+    }];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", nil];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation start];
+}
+
+- (void)updatePlacesWithJson:(NSArray *)json
+{
+    for (NSDictionary *placeJson in json) {
+        [ParseUtil placeFromJson:placeJson];
+    }
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
+
 
 - (void)companiesWithCompletionHandler:(EUCompletionHandler)onComplete
 {
     
+}
+
+
+- (void)sendTimeAndPlaceWithCompletionHandler:(EUCompletionHandler)onComplete
+{
+    Me *me = ApplicationDelegate.me;
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = DateFormat;
+    NSString *timeString = [formatter stringFromDate:me.time];
+    
+    NSDictionary *params = @{IdKey : @(541), PlaceKey : me.place.name, TimeKey : timeString};
+    
+    AFHTTPRequestOperation *operation = [self GET:SendTimeAndPlaceUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        onComplete(nil, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        onComplete(nil, error);
+    }];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", nil];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation start];
 }
 
 @end

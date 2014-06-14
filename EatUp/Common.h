@@ -17,3 +17,5 @@ extern NSString * const FindOthersSegueId;
 
 extern NSString * const CanInvitePeopleNotificationName;
 extern NSString * const CannotInvitePeopleNotificationName;
+
+extern NSString * const DateFormat;

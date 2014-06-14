@@ -18,6 +18,7 @@ typedef void (^EUCompletionHandler)(id data, NSError *error);
 
 - (void)loginWithCompletionHandler:(EUCompletionHandler)onComplete;
 - (void)profileInfoWithCompletionHandler:(EUCompletionHandler)onComplete;
+- (void)sendTimeAndPlaceWithCompletionHandler:(EUCompletionHandler)onComplete;
 
 - (void)companiesWithCompletionHandler:(EUCompletionHandler)onComplete;
 

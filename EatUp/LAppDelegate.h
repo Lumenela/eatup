@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Me.h"
 
 #define ApplicationDelegate ((LAppDelegate *)[UIApplication sharedApplication].delegate)
 
@@ -15,5 +16,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 - (void)showMainAppView;
+- (Me *)me;
 
 @end

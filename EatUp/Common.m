@@ -14,3 +14,5 @@ NSString * const FindOthersSegueId = @"FindOthersSegue";
 
 NSString * const CanInvitePeopleNotificationName = @"CanInvitePeople";
 NSString * const CannotInvitePeopleNotificationName = @"CannotInvitePeople";
+
+NSString * const DateFormat = @"yyyy-MM-dd'T'HH:mm:ss";

@@ -43,6 +43,16 @@
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName :[StyleUtil barButtonFont],
                                                            NSForegroundColorAttributeName : [StyleUtil yellowColor]} forState:UIControlStateNormal];
 }
+
+- (Me *)me
+{
+    NSArray *mes = [Me MR_findAll];
+    if (mes.count > 0) {
+        Me *me = [mes objectAtIndex:0];
+        return me;
+    }
+    return nil;
+}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

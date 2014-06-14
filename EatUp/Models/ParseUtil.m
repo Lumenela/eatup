@@ -13,8 +13,6 @@
 #import "Person.h"
 
 
-NSString * const DateFormat = @"yyyy-MM-dd'T'HH:mm:ss";
-
 NSString * const MeKeyName = @"FullName";
 NSString * const MeKeyTime = @"ExactTime";
 NSString * const MeKeyStartTime = @"StartPreferredTime";
@@ -61,6 +59,9 @@ NSString * const PersonKeyName = @"FullName";
     
     NSString *time = [json objectForKey:MeKeyTime];
     me.time = [formatter dateFromString:time];
+    if (!me.time) {
+        me = [NSDate date];
+    }
     
     NSString *startDate = [json objectForKey:MeKeyStartTime];
     me.startTime = [formatter dateFromString:startDate];
@@ -74,7 +75,7 @@ NSString * const PersonKeyName = @"FullName";
         me.meeting = [ParseUtil companyFromJson:meetingJson];
     }
     
-    [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfAndWait];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     return me;
 }
 
@@ -108,7 +109,7 @@ NSString * const PersonKeyName = @"FullName";
     
     company.place = [ParseUtil placeFromJson:json];
     
-    [[NSManagedObjectContext MR_context] MR_saveOnlySelfAndWait];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     return company;
 }
 
@@ -128,7 +129,7 @@ NSString * const PersonKeyName = @"FullName";
     person.userId = personId;
     person.name = [json objectForKey:PersonKeyName];
     person.imageURLString = [json objectForKey:PersonKeyImagePath];
-    [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfAndWait];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     return person;
 }
 
@@ -144,7 +145,7 @@ NSString * const PersonKeyName = @"FullName";
         place = [Place MR_createEntity];
     }
     place.name = name;
-    [[NSManagedObjectContext MR_context] MR_saveOnlySelfAndWait];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     return place;
 }
 
