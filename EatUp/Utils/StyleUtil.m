@@ -31,6 +31,11 @@
     return [UIFont fontWithName:@"AvenirNext-Medium" size:20.0];
 }
 
++ (UIFont *)barButtonFont
+{
+    return [UIFont fontWithName:@"AvenirNext-Medium" size:15.0];
+}
+
 + (UIFont *)bigTitleFont
 {
     return [UIFont fontWithName:@"AvenirNext-Regular" size:30.0];

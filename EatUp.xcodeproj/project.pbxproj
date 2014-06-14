@@ -34,6 +34,8 @@
 		A1A22ABB194C9C5F00A9B014 /* PopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22ABA194C9C5F00A9B014 /* PopUpView.m */; };
 		A1A22ABD194C9C6D00A9B014 /* PopUpPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A22ABC194C9C6D00A9B014 /* PopUpPicker.xib */; };
 		A1A22AC0194C9D2A00A9B014 /* PopUpWithBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22ABF194C9D2A00A9B014 /* PopUpWithBar.m */; };
+		A1A22AC3194CA87C00A9B014 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AC2194CA87C00A9B014 /* UIImage+Additions.m */; };
+		A1A22AC6194CAA1400A9B014 /* GroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AC5194CAA1400A9B014 /* GroupCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,10 @@
 		A1A22ABC194C9C6D00A9B014 /* PopUpPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpPicker.xib; sourceTree = "<group>"; };
 		A1A22ABE194C9D2A00A9B014 /* PopUpWithBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpWithBar.h; sourceTree = "<group>"; };
 		A1A22ABF194C9D2A00A9B014 /* PopUpWithBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpWithBar.m; sourceTree = "<group>"; };
+		A1A22AC1194CA87C00A9B014 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		A1A22AC2194CA87C00A9B014 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		A1A22AC4194CAA1400A9B014 /* GroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupCell.h; sourceTree = "<group>"; };
+		A1A22AC5194CAA1400A9B014 /* GroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupCell.m; sourceTree = "<group>"; };
 		D20C37AF59234D3C9C143A33 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,6 +236,8 @@
 				A1A22AB5194C8A2300A9B014 /* TableHeaderView.m */,
 				A1A22AB1194C830C00A9B014 /* TimeCell.h */,
 				A1A22AB2194C830C00A9B014 /* TimeCell.m */,
+				A1A22AC4194CAA1400A9B014 /* GroupCell.h */,
+				A1A22AC5194CAA1400A9B014 /* GroupCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +258,8 @@
 				A1A22AA9194C5ECA00A9B014 /* StyleUtil.m */,
 				A1A22AAB194C5EF300A9B014 /* UIColor+Additions.h */,
 				A1A22AAC194C5EF300A9B014 /* UIColor+Additions.m */,
+				A1A22AC1194CA87C00A9B014 /* UIImage+Additions.h */,
+				A1A22AC2194CA87C00A9B014 /* UIImage+Additions.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -389,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A22AC6194CAA1400A9B014 /* GroupCell.m in Sources */,
 				A1A22AA6194C5C4800A9B014 /* Common.m in Sources */,
 				A1A22ABB194C9C5F00A9B014 /* PopUpView.m in Sources */,
 				A1A22A9C194C556F00A9B014 /* LoginViewController.m in Sources */,
@@ -402,6 +413,7 @@
 				A1A22AAD194C5EF300A9B014 /* UIColor+Additions.m in Sources */,
 				A1A22A9F194C558A00A9B014 /* LunchConfigViewController.m in Sources */,
 				A1A22A73194C455000A9B014 /* LAppDelegate.m in Sources */,
+				A1A22AC3194CA87C00A9B014 /* UIImage+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

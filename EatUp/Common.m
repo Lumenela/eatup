@@ -9,3 +9,4 @@
 #import "Common.h"
 
 NSString * const AppWrapperControllerId = @"AppWrapperControllerId";
+NSString * const FindCompanySegueId = @"FindCompanySegue";

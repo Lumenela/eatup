@@ -58,7 +58,6 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
     [self.pickerPopUp setDisablesScreen:YES];
     [self.view addSubview:self.pickerPopUp];
     
-    
     self.selectedDate = [NSDate date];
 }
 
@@ -196,6 +195,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
         NSAttributedString *text = [[NSAttributedString alloc] initWithString:@"Найти компанию" attributes:attributes];
         button.contentMode = UIViewContentModeCenter;
         [button setAttributedTitle:text forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(findCompany:) forControlEvents:UIControlEventTouchUpInside];
         return button;
     }
     
@@ -213,6 +213,13 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
     TableHeaderView *header = [TableHeaderView headerForStyle:style];
     return header;
 }
+
+
+- (void)findCompany:(id)sender
+{
+    [self performSegueWithIdentifier:FindCompanySegueId sender:self];
+}
+
 
 /*
 #pragma mark - Navigation

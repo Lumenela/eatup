@@ -28,6 +28,7 @@
 
 - (void)setupAppearance
 {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     NSDictionary *textAttributes = @{NSFontAttributeName :[StyleUtil headlineFont],
                                      NSForegroundColorAttributeName : [UIColor whiteColor]};
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
@@ -36,6 +37,9 @@
     UIImage *navBackgroundTile = [UIImage imageNamed:@"nav-bg-tile"];
     [[UINavigationBar appearance] setBackgroundImage:[navBackgroundTile resizableImageWithCapInsets:UIEdgeInsetsZero] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:nil];
+    
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName :[StyleUtil barButtonFont],
+                                                           NSForegroundColorAttributeName : [StyleUtil yellowColor]} forState:UIControlStateNormal];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -16,5 +16,6 @@
 
 + (UIFont *)headlineFont;
 + (UIFont *)bigTitleFont;
++ (UIFont *)barButtonFont;
 
 @end

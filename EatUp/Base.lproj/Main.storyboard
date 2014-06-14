@@ -147,11 +147,11 @@
                                             <outlet property="nameLabel" destination="Jb3-S1-RJz" id="ZAL-X8-Pt3"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="57" id="zop-Zk-T0e">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="57" id="zop-Zk-T0e">
                                         <rect key="frame" x="0.0" y="190" width="320" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zop-Zk-T0e" id="bDc-gJ-5SJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Найти компанию" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfi-v9-oqV">
@@ -177,11 +177,59 @@
                     <navigationItem key="navigationItem" title="Сегодня я иду обедать в..." id="VLJ-TM-BM3"/>
                     <connections>
                         <outlet property="tableView" destination="LKc-E7-sr0" id="O7w-rb-38X"/>
+                        <segue destination="SJe-Nu-ubl" kind="push" identifier="FindCompanySegue" id="s4e-zO-Js4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hsz-xe-0VE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="699" y="872"/>
+        </scene>
+        <!--View Controller - Компании-->
+        <scene sceneID="QPK-fG-SI4">
+            <objects>
+                <viewController id="SJe-Nu-ubl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vti-hG-vEB"/>
+                        <viewControllerLayoutGuide type="bottom" id="HO5-hG-D2R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ehh-tE-um5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6qb-OG-2ZH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="89" id="Zy8-Fu-00f">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zy8-Fu-00f" id="4iE-ee-fJz">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dP-0L-4Li">
+                                                    <rect key="frame" x="200" y="29" width="116" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <state key="normal" title="ПРИСОЕДИНИТЬСЯ" backgroundImage="join">
+                                                        <color key="titleColor" red="0.3411764706" green="0.25490196079999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Компании" id="7eH-yK-rmF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fvr-2r-Yy1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072" y="872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s3H-qd-uN4">
@@ -204,10 +252,12 @@
     </scenes>
     <resources>
         <image name="email" width="19" height="15"/>
+        <image name="join" width="116" height="30"/>
         <image name="login" width="168" height="37"/>
         <image name="logo" width="162" height="80"/>
         <image name="password" width="16" height="18"/>
     </resources>
+    <color key="tintColor" red="0.97254901959999995" green="0.76078431369999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

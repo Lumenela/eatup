@@ -12,3 +12,4 @@
 #define TABLE_HEADER_HEIGHT 22
 
 extern NSString * const AppWrapperControllerId;
+extern NSString * const FindCompanySegueId;
