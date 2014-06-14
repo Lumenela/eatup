@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Place;
+@class Company, Place;
 
 @interface Me : NSManagedObject
 
@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSDate * time;
 @property (nonatomic, retain) NSDate * startTime;
 @property (nonatomic, retain) NSDate * endTime;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) Place *place;
+@property (nonatomic, retain) Company *meeting;
 
 @end

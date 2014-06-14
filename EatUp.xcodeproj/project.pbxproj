@@ -48,8 +48,9 @@
 		A1A22AEC194CDEB800A9B014 /* PlacePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A22AEB194CDEB800A9B014 /* PlacePicker.xib */; };
 		A1A22AFE194CF26300A9B014 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22AFD194CF26300A9B014 /* Place.m */; };
 		A1A22B01194CF26400A9B014 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B00194CF26400A9B014 /* Company.m */; };
-		A1A22B04194CF26400A9B014 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B03194CF26400A9B014 /* Person.m */; };
-		A1A22B07194CF26400A9B014 /* Me.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B06194CF26400A9B014 /* Me.m */; };
+		A1A22B0A194CF2A200A9B014 /* ParseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B09194CF2A200A9B014 /* ParseUtil.m */; };
+		A1A22B10194CF50300A9B014 /* Me.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B0F194CF50300A9B014 /* Me.m */; };
+		A1A22B13194CFA3E00A9B014 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B12194CFA3E00A9B014 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,10 +131,12 @@
 		A1A22AFD194CF26300A9B014 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		A1A22AFF194CF26400A9B014 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		A1A22B00194CF26400A9B014 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
-		A1A22B02194CF26400A9B014 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		A1A22B03194CF26400A9B014 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		A1A22B05194CF26400A9B014 /* Me.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Me.h; sourceTree = "<group>"; };
-		A1A22B06194CF26400A9B014 /* Me.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Me.m; sourceTree = "<group>"; };
+		A1A22B08194CF2A200A9B014 /* ParseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseUtil.h; sourceTree = "<group>"; };
+		A1A22B09194CF2A200A9B014 /* ParseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseUtil.m; sourceTree = "<group>"; };
+		A1A22B0E194CF50300A9B014 /* Me.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Me.h; sourceTree = "<group>"; };
+		A1A22B0F194CF50300A9B014 /* Me.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Me.m; sourceTree = "<group>"; };
+		A1A22B11194CFA3E00A9B014 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		A1A22B12194CFA3E00A9B014 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		D20C37AF59234D3C9C143A33 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,10 +269,12 @@
 				A1A22AFF194CF26400A9B014 /* Company.h */,
 				A1A22B00194CF26400A9B014 /* Company.m */,
 				A1A22ACC194CB58A00A9B014 /* EatUpModel.xcdatamodeld */,
-				A1A22B05194CF26400A9B014 /* Me.h */,
-				A1A22B06194CF26400A9B014 /* Me.m */,
-				A1A22B02194CF26400A9B014 /* Person.h */,
-				A1A22B03194CF26400A9B014 /* Person.m */,
+				A1A22B11194CFA3E00A9B014 /* Person.h */,
+				A1A22B12194CFA3E00A9B014 /* Person.m */,
+				A1A22B0E194CF50300A9B014 /* Me.h */,
+				A1A22B0F194CF50300A9B014 /* Me.m */,
+				A1A22B08194CF2A200A9B014 /* ParseUtil.h */,
+				A1A22B09194CF2A200A9B014 /* ParseUtil.m */,
 				A1A22AFC194CF26300A9B014 /* Place.h */,
 				A1A22AFD194CF26300A9B014 /* Place.m */,
 			);
@@ -472,14 +477,15 @@
 				A1A22AC9194CB4DB00A9B014 /* CompaniesViewController.m in Sources */,
 				A1A22AC6194CAA1400A9B014 /* CompanyCell.m in Sources */,
 				A1A22AA6194C5C4800A9B014 /* Common.m in Sources */,
+				A1A22B13194CFA3E00A9B014 /* Person.m in Sources */,
 				A1A22ABB194C9C5F00A9B014 /* PopUpView.m in Sources */,
 				A1A22A9C194C556F00A9B014 /* LoginViewController.m in Sources */,
 				A1A22AB3194C830C00A9B014 /* TimeCell.m in Sources */,
-				A1A22B07194CF26400A9B014 /* Me.m in Sources */,
 				A1A22AC0194C9D2A00A9B014 /* PopUpWithBar.m in Sources */,
 				A1A22AAA194C5ECA00A9B014 /* StyleUtil.m in Sources */,
 				A1A22AB0194C82FA00A9B014 /* PlaceCell.m in Sources */,
-				A1A22B04194CF26400A9B014 /* Person.m in Sources */,
+				A1A22B10194CF50300A9B014 /* Me.m in Sources */,
+				A1A22B0A194CF2A200A9B014 /* ParseUtil.m in Sources */,
 				A1A22AE2194CCFDF00A9B014 /* PersonCell.m in Sources */,
 				A1A22A6F194C455000A9B014 /* main.m in Sources */,
 				A1A22AB6194C8A2300A9B014 /* TableHeaderView.m in Sources */,

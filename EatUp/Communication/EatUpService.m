@@ -7,7 +7,8 @@
 //
 
 #import "EatUpService.h"
-#import "Me.h"
+#import "ParseUtil.h"
+//#import "Me.h"
 
 
 NSString * const ProfileInfoURL = @"http://10.168.0.255/Cmd.EatUp/Employees/getprofileinfo";
@@ -35,8 +36,10 @@ NSString * const ProfileInfoURL = @"http://10.168.0.255/Cmd.EatUp/Employees/getp
 - (void)profileInfoWithCompletionHandler:(EUCompletionHandler)onComplete
 {
     NSDictionary *params = @{@"id": @(541)};
+    
+    __weak typeof(self) weakSelf = self;
     AFHTTPRequestOperation *operation = [self GET:ProfileInfoURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@", responseObject);
+        [weakSelf updateProfileWithJson:responseObject onComplete:onComplete];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
@@ -44,6 +47,13 @@ NSString * const ProfileInfoURL = @"http://10.168.0.255/Cmd.EatUp/Employees/getp
     operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", nil];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation start];
+}
+
+
+- (void)updateProfileWithJson:(NSDictionary *)json onComplete:(EUCompletionHandler)onComplete
+{
+    Me *me = [ParseUtil meFromJson:json];
+    onComplete(me, nil);
 }
 
 - (void)companiesWithCompletionHandler:(EUCompletionHandler)onComplete

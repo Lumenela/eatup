@@ -9,15 +9,17 @@
     <entity name="Me" representedClassName="Me" syncable="YES">
         <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="imageURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="meeting" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" syncable="YES"/>
         <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="imageURLString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="company" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Company" inverseName="person" inverseEntity="Company" syncable="YES"/>
     </entity>
     <entity name="Place" representedClassName="Place" syncable="YES">
@@ -26,8 +28,8 @@
     </entity>
     <elements>
         <element name="Company" positionX="0" positionY="0" width="128" height="103"/>
-        <element name="Person" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Person" positionX="0" positionY="0" width="128" height="103"/>
         <element name="Place" positionX="0" positionY="0" width="128" height="75"/>
-        <element name="Me" positionX="36" positionY="63" width="128" height="133"/>
+        <element name="Me" positionX="36" positionY="63" width="128" height="163"/>
     </elements>
 </model>

@@ -13,6 +13,8 @@
 #import "StyleUtil.h"
 #import "PopUpWithBar.h"
 #import "EatUpService.h"
+#import "LAppDelegate.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 
 typedef NS_ENUM(NSInteger, SectionIndex) {
@@ -61,8 +63,9 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
     
     self.selectedDate = [NSDate date];
     
+    [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
     [[EatUpService sharedInstance] profileInfoWithCompletionHandler:^(id data, NSError *error) {
-        
+        [MBProgressHUD hideHUDForView:ApplicationDelegate.window animated:YES];
     }];
 }
 

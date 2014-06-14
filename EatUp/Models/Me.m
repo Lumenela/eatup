@@ -7,6 +7,7 @@
 //
 
 #import "Me.h"
+#import "Company.h"
 #import "Place.h"
 
 
@@ -17,6 +18,8 @@
 @dynamic time;
 @dynamic startTime;
 @dynamic endTime;
+@dynamic name;
 @dynamic place;
+@dynamic meeting;
 
 @end

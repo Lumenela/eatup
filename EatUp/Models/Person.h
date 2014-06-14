@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) NSString * imageURLString;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * userId;
+@property (nonatomic, retain) NSNumber * userId;
 @property (nonatomic, retain) NSSet *company;
 @end
 
