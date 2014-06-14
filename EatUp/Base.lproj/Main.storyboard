@@ -221,7 +221,7 @@
                                                     </connections>
                                                 </button>
                                                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x1h-Ud-3K0">
-                                                    <rect key="frame" x="9" y="9" width="183" height="55"/>
+                                                    <rect key="frame" x="9" y="9" width="170" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="5" id="xCo-ID-yAz">
@@ -284,11 +284,31 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="6qb-OG-2ZH" id="w5L-FH-ssO"/>
+                        <segue destination="kbd-B1-Xhr" kind="push" identifier="FindOthersSegue" id="Ug5-mf-v0I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvr-2r-Yy1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1072" y="872"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vZ9-Tu-Do8">
+            <objects>
+                <viewController id="kbd-B1-Xhr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ndc-Bp-4vv"/>
+                        <viewControllerLayoutGuide type="bottom" id="1O9-ic-dia"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mhk-AI-yQx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sLF-kS-jyM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dp5-sb-wWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1496" y="872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s3H-qd-uN4">

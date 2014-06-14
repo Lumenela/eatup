@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 #define SECTION_COUNT 2
 
 
-@interface CompaniesViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface CompaniesViewController ()<UITableViewDataSource, UITableViewDelegate, CompanyCellDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
@@ -128,8 +128,13 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 
 - (void)findOthers
 {
-    
+    [self performSegueWithIdentifier:FindOthersSegueId sender:self];
 }
 
+- (void)joinCompany:(Company *)company
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"EatUp" message:@"Поздравляем! Вы идете в Лидо в 14:00 в компании" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
 
 @end

@@ -10,3 +10,4 @@
 
 NSString * const AppWrapperControllerId = @"AppWrapperControllerId";
 NSString * const FindCompanySegueId = @"FindCompanySegue";
+NSString * const FindOthersSegueId = @"FindOthersSegue";

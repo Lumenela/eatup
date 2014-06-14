@@ -20,6 +20,6 @@
 
 @protocol CompanyCellDelegate<NSObject>
 
-- (void)didPressJoinCompany:(Company *)company;
+- (void)joinCompany:(Company *)company;
 
 @end

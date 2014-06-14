@@ -13,3 +13,4 @@
 
 extern NSString * const AppWrapperControllerId;
 extern NSString * const FindCompanySegueId;
+extern NSString * const FindOthersSegueId;

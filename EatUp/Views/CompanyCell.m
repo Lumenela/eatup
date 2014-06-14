@@ -30,7 +30,7 @@
 
 - (IBAction)join:(id)sender
 {
-    [self.delegate didPressJoinCompany:self.company];
+    [self.delegate joinCompany:self.company];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section 
