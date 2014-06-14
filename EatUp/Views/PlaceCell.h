@@ -10,4 +10,6 @@
 
 @interface PlaceCell : UITableViewCell
 
+@property (nonatomic, strong) NSString *place;
+
 @end

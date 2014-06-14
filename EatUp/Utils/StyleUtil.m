@@ -16,9 +16,24 @@
     return [UIColor colorWithR:123 g:192 b:197];
 }
 
++ (UIColor *)yellowColor
+{
+    return [UIColor colorWithR:248 g:194 b:81];
+}
+
++ (UIColor *)darkColor
+{
+    return [UIColor colorWithR:87 g:65 b:77];
+}
+
 + (UIFont *)headlineFont
 {
     return [UIFont fontWithName:@"AvenirNext-Medium" size:17.0];
+}
+
++ (UIFont *)bigTitleFont
+{
+    return [UIFont fontWithName:@"AvenirNext-Regular" size:30.0];
 }
 
 @end
