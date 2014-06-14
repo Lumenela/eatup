@@ -8,12 +8,13 @@
 
 #import "LAppDelegate.h"
 #import "LunchConfigViewController.h"
+#import "StyleUtil.h"
 
 @implementation LAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [self setupAppearance];
     return YES;
 }
 
@@ -23,6 +24,18 @@
     LunchConfigViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:AppWrapperControllerId];
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
+}
+
+- (void)setupAppearance
+{
+    NSDictionary *textAttributes = @{NSFontAttributeName :[StyleUtil headlineFont],
+                                     NSForegroundColorAttributeName : [UIColor whiteColor]};
+    [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
+    
+    
+    UIImage *navBackgroundTile = [UIImage imageNamed:@"nav-bg-tile"];
+    [[UINavigationBar appearance] setBackgroundImage:[navBackgroundTile resizableImageWithCapInsets:UIEdgeInsetsZero] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:nil];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

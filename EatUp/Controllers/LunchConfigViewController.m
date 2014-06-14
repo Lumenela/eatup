@@ -9,16 +9,17 @@
 #import "LunchConfigViewController.h"
 #import "PlaceCell.h"
 #import "TimeCell.h"
+#import "TableHeaderView.h"
+
 
 typedef NS_ENUM(NSInteger, SectionIndex) {
     SectionIndexTime = 0,
     SectionIndexPlace = 1
 };
 
-@interface LunchConfigViewController ()<UITableViewDelegate, UITableViewDataSource, TimeDelegate>
+@interface LunchConfigViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
-@property (nonatomic, copy) PickTimeCompletionHandler onPickTime;
 
 @end
 
@@ -36,8 +37,8 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -64,6 +65,18 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 }
 
 
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case SectionIndexTime:
+            return 60;
+        case SectionIndexPlace:
+            return 44;
+    }
+    return 0;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.section) {
@@ -75,6 +88,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
             }
             // load last time
             cell.time = [NSDate date];
+            return cell;
         }
         /*case SectionIndexPlace: {
             static NSString *PlaceCellId = @"PlaceCellId";
@@ -96,9 +110,41 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 }
 
 
-- (void)pickTimeWithCompletionHandler:(PickTimeCompletionHandler)time
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{    
+    switch (indexPath.section) {
+        case SectionIndexTime: {
+        
+        }
+        case SectionIndexPlace: {
+            
+        }
+    }
+}
+
+
+- (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    return TABLE_HEADER_HEIGHT;
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    TableHeaderStyle style = 0;
+    switch (section) {
+        case SectionIndexTime: {
+            style = TableHeaderStyleTime;
+            break;
+        }
+        case SectionIndexPlace: {
+            style = TableHeaderStylePlace;
+            break;
+        }
+    }
     
+    TableHeaderView *header = [TableHeaderView headerForStyle:style];
+    return header;
 }
 
 /*

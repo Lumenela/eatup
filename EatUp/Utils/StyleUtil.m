@@ -16,4 +16,9 @@
     return [UIColor colorWithR:123 g:192 b:197];
 }
 
++ (UIFont *)headlineFont
+{
+    return [UIFont fontWithName:@"AvenirNext-Medium" size:17.0];
+}
+
 @end

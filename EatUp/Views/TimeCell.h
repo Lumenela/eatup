@@ -8,20 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^PickTimeCompletionHandler)(NSDate *time);
-
-
 @protocol TimeDelegate;
 @interface TimeCell : UITableViewCell
 
 @property (nonatomic, strong) NSDate *time;
-@property (nonatomic, weak) id<TimeDelegate> delegate;
-
-@end
-
-
-@protocol TimeDelegate
-
-- (void)pickTimeWithCompletionHandler:(PickTimeCompletionHandler)time;
 
 @end

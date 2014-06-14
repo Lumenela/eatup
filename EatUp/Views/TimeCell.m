@@ -10,7 +10,7 @@
 
 @interface TimeCell()
 
-@property (nonatomic, weak) IBOutlet UIButton *timeButton;
+@property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 
 @end
 
@@ -38,16 +38,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"HH:mm";
     NSString *string = [formatter stringFromDate:time];
-    [self.timeButton setTitle:string forState:UIControlStateNormal];
-}
-
-
-- (IBAction)pickTime:(id)sender
-{
-    __weak typeof(self) weakSelf = self;
-    [self.delegate pickTimeWithCompletionHandler:^(NSDate *time) {
-        weakSelf.time = time;
-    }];
+    self.timeLabel.text = string;
 }
 
 

@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 #define KEYBOARD_HEIGHT 216
+#define TABLE_HEADER_HEIGHT 22
 
 extern NSString * const AppWrapperControllerId;
