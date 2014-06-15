@@ -55,14 +55,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 {
     [super viewWillAppear:animated];
     if (ApplicationDelegate.needRefreshProfile) {
-        self.tableView.hidden = YES;
-        self.meetingView.hidden = YES;
-        __weak typeof(self) weakSelf = self;
-        [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
-        [[EatUpService sharedInstance] profileInfoWithCompletionHandler:^(id data, NSError *error) {
-            [weakSelf updateState];
-            [MBProgressHUD hideAllHUDsForView:ApplicationDelegate.window animated:YES];
-        }];
+        [self refresh];
         ApplicationDelegate.needRefreshProfile = NO;
     } else {
         [self updateState]; 
@@ -83,6 +76,18 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
     }
 }
 
+
+- (IBAction)refresh
+{
+    self.tableView.hidden = YES;
+    self.meetingView.hidden = YES;
+    __weak typeof(self) weakSelf = self;
+    [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
+    [[EatUpService sharedInstance] profileInfoWithCompletionHandler:^(id data, NSError *error) {
+        [weakSelf updateState];
+        [MBProgressHUD hideAllHUDsForView:ApplicationDelegate.window animated:YES];
+    }];
+}
 
 - (void)viewDidLoad
 {

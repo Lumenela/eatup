@@ -88,7 +88,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Lunch Config View Controller - Сегодня я иду обедать в...-->
+        <!--Lunch Config View Controller - Обед сегодня в-->
         <scene sceneID="8Bq-vK-HIW">
             <objects>
                 <viewController id="WHd-8T-J08" customClass="LunchConfigViewController" sceneMemberID="viewController">
@@ -229,7 +229,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Сегодня я иду обедать в..." id="VLJ-TM-BM3"/>
+                    <navigationItem key="navigationItem" title="Обед сегодня в" id="VLJ-TM-BM3">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="fnu-9W-ICO">
+                            <connections>
+                                <action selector="refresh" destination="WHd-8T-J08" id="dNh-mB-yGU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="meetingView" destination="vkz-bd-OMy" id="hMO-vm-gps"/>
                         <outlet property="tableView" destination="LKc-E7-sr0" id="O7w-rb-38X"/>

@@ -201,12 +201,12 @@
                   symbolName = "-[EatUpService peopleToInviteWithCompletionHandler:]"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424505412.381997"
+                  timestampString = "424510284.330633"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
                   endingLineNumber = "164"
-                  offsetFromSymbolStart = "80">
+                  offsetFromSymbolStart = "64">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -215,12 +215,12 @@
                   symbolName = "__52-[EatUpService peopleToInviteWithCompletionHandler:]_block_invoke"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424505412.382224"
+                  timestampString = "424510284.330848"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
                   endingLineNumber = "164"
-                  offsetFromSymbolStart = "82">
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -311,12 +311,12 @@
                   symbolName = "-[EatUpService inviteWithCompletionHandler:]"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424505412.386275"
+                  timestampString = "424510284.334347"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "213"
                   endingLineNumber = "213"
-                  offsetFromSymbolStart = "947">
+                  offsetFromSymbolStart = "840">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -325,12 +325,12 @@
                   symbolName = "__44-[EatUpService inviteWithCompletionHandler:]_block_invoke"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424505412.38651"
+                  timestampString = "424510284.334575"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "213"
                   endingLineNumber = "213"
-                  offsetFromSymbolStart = "81">
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -342,11 +342,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EatUp/Controllers/LunchConfigViewController.m"
-            timestampString = "424501068.911996"
+            timestampString = "424507480.783416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -405,13 +405,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EatUp/Controllers/LunchConfigViewController.m"
-            timestampString = "424500613.496516"
+            filePath = "EatUp/Views/CompanyCell.m"
+            timestampString = "424501434.763096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-join:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -421,13 +421,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EatUp/Views/CompanyCell.m"
-            timestampString = "424501434.763096"
+            filePath = "EatUp/Controllers/CompaniesViewController.m"
+            timestampString = "424507547.77165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-join:"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-joinCompany:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EatUp/Controllers/CompaniesViewController.m"
+            timestampString = "424507549.004386"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "-joinCompany:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EatUp/Controllers/LunchConfigViewController.m"
+            timestampString = "424507750.156788"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-updateState"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
