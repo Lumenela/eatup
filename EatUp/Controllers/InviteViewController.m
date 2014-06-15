@@ -18,7 +18,7 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 
 
-@interface InviteViewController ()<UITableViewDataSource, UITableViewDelegate, PersonCellDelegate, TimePlaceDelegate, PickerDelegate, PlacePickerDelegate, NSFetchedResultsControllerDelegate>
+@interface InviteViewController ()<UITableViewDataSource, UITableViewDelegate, PersonCellDelegate, TimePlaceDelegate, PickerDelegate, PlacePickerDelegate, NSFetchedResultsControllerDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
@@ -301,5 +301,31 @@
     ApplicationDelegate.me.place = place;
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
+
+
+- (IBAction)done:(id)sender
+{
+    __weak typeof(self) weakSelf = self;
+    [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
+    [[EatUpService sharedInstance] inviteWithCompletionHandler:^(id data, NSError *error) {
+        [MBProgressHUD hideHUDForView:ApplicationDelegate.window animated:YES];
+        if (!error) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"EatUp" message:@"Вы успешно пригласили коллег на обед. Встреча около главного входа." delegate:weakSelf cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
+    __weak typeof(self) weakSelf = self;
+    [[EatUpService sharedInstance] profileInfoWithCompletionHandler:^(id data, NSError *error) {
+        [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+        [MBProgressHUD hideAllHUDsForView:ApplicationDelegate.window animated:YES];
+    }];
+}
+
 
 @end

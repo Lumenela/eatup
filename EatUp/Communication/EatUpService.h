@@ -22,5 +22,6 @@ typedef void (^EUCompletionHandler)(id data, NSError *error);
 - (void)companiesWithCompletionHandler:(EUCompletionHandler)onComplete;
 - (void)peopleToInviteWithCompletionHandler:(EUCompletionHandler)onComplete;
 - (void)joinCompany:(NSNumber *)companyId withCompletionHandler:(EUCompletionHandler)onComplete;
+- (void)inviteWithCompletionHandler:(EUCompletionHandler)onComplete;
 
 @end

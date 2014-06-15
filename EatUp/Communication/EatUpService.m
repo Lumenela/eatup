@@ -18,12 +18,15 @@ NSString * const SendTimeAndPlaceUrl = @"http://10.168.0.255/Cmd.EatUp/Employees
 NSString * const CompaniesUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/GetMeetings";
 NSString * const PeopleUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/GetPreferablePeople";
 NSString * const JoinUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/join";
+NSString * const InviteUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/BatchInvite";
+
 
 NSString * const TimeKey = @"time";
 NSString * const PlaceKey = @"placeName";
 NSString * const ProfileIdKey = @"profileid";
 NSString * const IdKey = @"id";
 NSString * const MeetingIdKey = @"meetingId";
+NSString * const TargetIdsKey = @"targetIds";
 
 
 @implementation EatUpService
@@ -193,5 +196,31 @@ NSString * const MeetingIdKey = @"meetingId";
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation start];
 }
+
+
+- (void)inviteWithCompletionHandler:(EUCompletionHandler)onComplete
+{
+    NSArray *people = [Person MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"isSelected = YES"]];
+    NSMutableString *ids = [NSMutableString new];
+    int index = 0;
+    for (Person *person in people) {
+        [ids appendString:person.userId.stringValue];
+        if (index < people.count - 1) {
+            [ids appendString:@","];
+        }
+        index++;
+    }
+    AFHTTPRequestOperation *operation = [self GET:InviteUrl parameters:@{IdKey : @(541), TargetIdsKey : ids} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        onComplete(nil, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        onComplete(nil, error);
+    }];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", nil];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation start];
+
+}
+
 
 @end

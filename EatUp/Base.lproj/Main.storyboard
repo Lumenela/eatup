@@ -364,7 +364,21 @@
                             <constraint firstItem="vG6-lR-ywH" firstAttribute="top" secondItem="Mhk-AI-yQx" secondAttribute="top" constant="65" id="nvy-tK-7yQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Пригласить" id="sLF-kS-jyM"/>
+                    <navigationItem key="navigationItem" title="Пригласить" id="sLF-kS-jyM">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="V4y-W6-vUo">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="isF-43-Cn7">
+                                <rect key="frame" x="233" y="5" width="71" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Готово">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="done:" destination="kbd-B1-Xhr" eventType="touchUpInside" id="sYb-Au-lva"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="vG6-lR-ywH" id="CKc-7n-7dZ"/>
                     </connections>
