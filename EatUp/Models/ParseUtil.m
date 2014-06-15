@@ -53,6 +53,7 @@ NSString * const PersonKeyName = @"FullName";
         me = [Me MR_createEntity];
     }
     me.name = [json objectForKey:MeKeyName];
+    me.userId = @(541);
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = DateFormat;
@@ -74,6 +75,8 @@ NSString * const PersonKeyName = @"FullName";
     
     if (meetingJson && ![meetingJson isEqual:[NSNull null]] && meetingJson.count > 0) {
         me.meeting = [ParseUtil companyFromJson:meetingJson];
+    } else {
+        me.meeting = nil;
     }
     
     me.place = [ParseUtil placeFromJson:json];

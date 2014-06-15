@@ -14,6 +14,7 @@
 @interface LAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (assign, nonatomic) BOOL needRefreshProfile;
 
 - (void)showMainAppView;
 - (Me *)me;

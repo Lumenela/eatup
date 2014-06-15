@@ -319,12 +319,9 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
-    __weak typeof(self) weakSelf = self;
-    [[EatUpService sharedInstance] profileInfoWithCompletionHandler:^(id data, NSError *error) {
-        [weakSelf.navigationController popToRootViewControllerAnimated:YES];
-        [MBProgressHUD hideAllHUDsForView:ApplicationDelegate.window animated:YES];
-    }];
+
+    ApplicationDelegate.needRefreshProfile = YES;
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 

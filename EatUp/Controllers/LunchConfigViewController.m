@@ -16,6 +16,7 @@
 #import "LAppDelegate.h"
 #import "Me.h"
 #import "Place.h"
+#import "MeetingView.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
 
@@ -30,6 +31,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 @interface LunchConfigViewController ()<UITableViewDelegate, UITableViewDataSource, PickerDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet MeetingView *meetingView;
 
 @property (nonatomic, strong) NSArray *places;
 
@@ -48,6 +50,39 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
     }
     return self;
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (ApplicationDelegate.needRefreshProfile) {
+        self.tableView.hidden = YES;
+        self.meetingView.hidden = YES;
+        __weak typeof(self) weakSelf = self;
+        [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
+        [[EatUpService sharedInstance] profileInfoWithCompletionHandler:^(id data, NSError *error) {
+            [weakSelf updateState];
+            [MBProgressHUD hideAllHUDsForView:ApplicationDelegate.window animated:YES];
+        }];
+        ApplicationDelegate.needRefreshProfile = NO;
+    } else {
+        [self updateState]; 
+    }
+}
+
+
+- (void)updateState
+{
+    if (ApplicationDelegate.me.meeting) {
+        self.tableView.hidden = YES;
+        self.meetingView.hidden = NO;
+        self.meetingView.company = ApplicationDelegate.me.meeting;
+    } else {
+        self.meetingView.hidden = YES;
+        self.tableView.hidden = NO;
+        [self.tableView reloadData];
+    }
+}
+
 
 - (void)viewDidLoad
 {
@@ -68,6 +103,8 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
         [MBProgressHUD hideHUDForView:ApplicationDelegate.window animated:YES];
         if (!error) {
             [weakSelf updateTimeAndPlace];
+            weakSelf.meetingView.company = ApplicationDelegate.me.meeting;
+            [weakSelf updateState];
         }
     }];
 }
@@ -277,10 +314,6 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 }
 */
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
-}
+
 
 @end
