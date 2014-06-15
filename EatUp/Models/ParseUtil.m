@@ -128,7 +128,7 @@ NSString * const PersonKeyName = @"FullName";
     
     person.userId = personId;
     person.name = [json objectForKey:PersonKeyName];
-    person.imageURLString = [json objectForKey:PersonKeyImagePath];
+    person.imageURLString = [json objectForKey:@"ImageUrl"];
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     return person;
 }

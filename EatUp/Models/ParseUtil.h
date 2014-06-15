@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "Me.h"
+#import "Person.h"
 
 @interface ParseUtil : NSObject
 
 + (Me *)meFromJson:(NSDictionary *)json;
 
 + (Place *)placeFromJson:(NSDictionary *)json;
++ (Company *)companyFromJson:(NSDictionary *)json;
++ (Person *)personFromJson:(NSDictionary *)json;
 
 @end

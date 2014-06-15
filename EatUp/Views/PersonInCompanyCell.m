@@ -8,6 +8,16 @@
 
 #import "PersonInCompanyCell.h"
 #import "StyleUtil.h"
+#import "UIImage+Additions.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <UIActivityIndicator-for-SDWebImage/UIImageView+UIActivityIndicatorForSDWebImage.h>
+
+
+@interface PersonInCompanyCell()
+
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+
+@end
 
 
 @implementation PersonInCompanyCell
@@ -31,13 +41,17 @@
     self.imageView.layer.borderColor = [StyleUtil loginBackgroundColor].CGColor;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)setImageUrl:(NSString *)urlString
 {
-    // Drawing code
+    NSURL *imageURL = [NSURL URLWithString:urlString];
+    if (imageURL) {
+        __weak typeof(self) weakSelf = self;
+        //        UIImage *placeholder = [UIImage imageNamed:@"gift"];
+        [self.imageView setImageWithURL:imageURL placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+            image = [image thumbnail];
+            weakSelf.imageView.image = image;
+        } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    }
 }
-*/
 
 @end

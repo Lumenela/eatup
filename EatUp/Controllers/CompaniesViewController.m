@@ -9,6 +9,9 @@
 #import "CompaniesViewController.h"
 #import "CompanyCell.h"
 #import "StyleUtil.h"
+#import "EatUpService.h"
+#import "LAppDelegate.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 
 typedef NS_ENUM(NSInteger, SectionIndex) {
@@ -22,6 +25,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 @interface CompaniesViewController ()<UITableViewDataSource, UITableViewDelegate, CompanyCellDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *companies;
 
 @end
 
@@ -39,6 +43,15 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.companies = [Company MR_findAll];
+    
+    [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
+    __weak typeof(self) weakSelf = self;
+    [[EatUpService sharedInstance] companiesWithCompletionHandler:^(id data, NSError *error) {
+        weakSelf.companies = [Company MR_findAll];
+        [weakSelf.tableView reloadData];
+        [MBProgressHUD hideAllHUDsForView:ApplicationDelegate.window animated:YES];
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -51,7 +64,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 {
     switch (section) {
         case SectionIndexCompanies: {
-            return 2;
+            return self.companies.count;
         }
         case SectionIndexFind: {
             return 0;
@@ -70,7 +83,8 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
             if (!cell) {
                 cell = [[CompanyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CompanyCellId];
             }
-            cell.company = nil;
+            Company *company = [self.companies objectAtIndex:indexPath.row];
+            cell.company = company;
             return cell;
         }
         case SectionIndexFind: {

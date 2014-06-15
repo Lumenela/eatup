@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3FE41AC8A2DF41718A80735C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 436AE4C53BBE468CAB76CD7B /* libPods.a */; };
+		A1A21417194D2A58008A7778 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A21416194D2A58008A7778 /* Person.m */; };
 		A1A22A63194C455000A9B014 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A22A62194C455000A9B014 /* Foundation.framework */; };
 		A1A22A65194C455000A9B014 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A22A64194C455000A9B014 /* CoreGraphics.framework */; };
 		A1A22A67194C455000A9B014 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A22A66194C455000A9B014 /* UIKit.framework */; };
@@ -50,7 +51,6 @@
 		A1A22B01194CF26400A9B014 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B00194CF26400A9B014 /* Company.m */; };
 		A1A22B0A194CF2A200A9B014 /* ParseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B09194CF2A200A9B014 /* ParseUtil.m */; };
 		A1A22B10194CF50300A9B014 /* Me.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B0F194CF50300A9B014 /* Me.m */; };
-		A1A22B13194CFA3E00A9B014 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A22B12194CFA3E00A9B014 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		436AE4C53BBE468CAB76CD7B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1A21415194D2A58008A7778 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		A1A21416194D2A58008A7778 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		A1A22A5F194C455000A9B014 /* EatUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A22A62194C455000A9B014 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A1A22A64194C455000A9B014 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,8 +137,6 @@
 		A1A22B09194CF2A200A9B014 /* ParseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseUtil.m; sourceTree = "<group>"; };
 		A1A22B0E194CF50300A9B014 /* Me.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Me.h; sourceTree = "<group>"; };
 		A1A22B0F194CF50300A9B014 /* Me.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Me.m; sourceTree = "<group>"; };
-		A1A22B11194CFA3E00A9B014 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		A1A22B12194CFA3E00A9B014 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		D20C37AF59234D3C9C143A33 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -269,12 +269,12 @@
 				A1A22AFF194CF26400A9B014 /* Company.h */,
 				A1A22B00194CF26400A9B014 /* Company.m */,
 				A1A22ACC194CB58A00A9B014 /* EatUpModel.xcdatamodeld */,
-				A1A22B11194CFA3E00A9B014 /* Person.h */,
-				A1A22B12194CFA3E00A9B014 /* Person.m */,
 				A1A22B0E194CF50300A9B014 /* Me.h */,
 				A1A22B0F194CF50300A9B014 /* Me.m */,
 				A1A22B08194CF2A200A9B014 /* ParseUtil.h */,
 				A1A22B09194CF2A200A9B014 /* ParseUtil.m */,
+				A1A21415194D2A58008A7778 /* Person.h */,
+				A1A21416194D2A58008A7778 /* Person.m */,
 				A1A22AFC194CF26300A9B014 /* Place.h */,
 				A1A22AFD194CF26300A9B014 /* Place.m */,
 			);
@@ -477,7 +477,7 @@
 				A1A22AC9194CB4DB00A9B014 /* CompaniesViewController.m in Sources */,
 				A1A22AC6194CAA1400A9B014 /* CompanyCell.m in Sources */,
 				A1A22AA6194C5C4800A9B014 /* Common.m in Sources */,
-				A1A22B13194CFA3E00A9B014 /* Person.m in Sources */,
+				A1A21417194D2A58008A7778 /* Person.m in Sources */,
 				A1A22ABB194C9C5F00A9B014 /* PopUpView.m in Sources */,
 				A1A22A9C194C556F00A9B014 /* LoginViewController.m in Sources */,
 				A1A22AB3194C830C00A9B014 /* TimeCell.m in Sources */,

@@ -15,6 +15,8 @@
 @dynamic imageURLString;
 @dynamic name;
 @dynamic userId;
+@dynamic isPref;
+@dynamic isSelected;
 @dynamic company;
 
 @end

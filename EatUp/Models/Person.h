@@ -16,6 +16,8 @@
 @property (nonatomic, retain) NSString * imageURLString;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * userId;
+@property (nonatomic, retain) NSNumber * isPref;
+@property (nonatomic, retain) NSNumber * isSelected;
 @property (nonatomic, retain) NSSet *company;
 @end
 

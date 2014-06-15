@@ -10,6 +10,6 @@
 
 @interface PersonInCompanyCell : UICollectionViewCell
 
-@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+- (void)setImageUrl:(NSString *)urlString;
 
 @end

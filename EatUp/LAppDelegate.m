@@ -10,6 +10,7 @@
 #import "LunchConfigViewController.h"
 #import "StyleUtil.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
+#import <SDWebImage/SDImageCache.h>
 
 @implementation LAppDelegate
 
@@ -17,6 +18,7 @@
 {
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"EatUpModel"];
     [self setupAppearance];
+    [self setupCache];
     return YES;
 }
 
@@ -42,6 +44,20 @@
     
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName :[StyleUtil barButtonFont],
                                                            NSForegroundColorAttributeName : [StyleUtil yellowColor]} forState:UIControlStateNormal];
+}
+
+- (void)setupCache
+{
+    // Create a 4MB in-memory, 32MB disk cache
+    NSURLCache *cache = [[NSURLCache alloc] initWithMemoryCapacity:4*1024*1024
+                                                      diskCapacity:32*1024*1024
+                                                          diskPath:@"app_cache"];
+    
+    // Set the shared cache to our new instance
+    [NSURLCache setSharedURLCache:cache];
+    
+    NSString *bundledPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"CustomPathImages"];
+    [[SDImageCache sharedImageCache] addReadOnlyCachePath:bundledPath];
 }
 
 - (Me *)me

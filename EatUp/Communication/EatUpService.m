@@ -15,10 +15,15 @@
 NSString * const ProfileInfoURL = @"http://10.168.0.255/Cmd.EatUp/Employees/getprofileinfo";
 NSString * const PlacesUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/getplaces";
 NSString * const SendTimeAndPlaceUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/ChangePlaceAndTime";
+NSString * const CompaniesUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/GetMeetings";
+NSString * const PeopleUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/GetMeetings";
+NSString * const JoinUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/join";
 
 NSString * const TimeKey = @"time";
 NSString * const PlaceKey = @"placeName";
-NSString * const IdKey = @"profileid";
+NSString * const ProfileIdKey = @"profileid";
+NSString * const IdKey = @"id";
+NSNumber * const MeetingIdKey = @"meetingId";
 
 
 @implementation EatUpService
@@ -94,7 +99,26 @@ NSString * const IdKey = @"profileid";
 
 - (void)companiesWithCompletionHandler:(EUCompletionHandler)onComplete
 {
-    
+    __weak typeof(self) weakSelf = self;
+    AFHTTPRequestOperation *operation = [self GET:CompaniesUrl parameters:@{IdKey : @(541)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [weakSelf updateCompaniesFromJson:responseObject];
+        onComplete(nil, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        onComplete(nil, error);
+    }];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", nil];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation start];
+}
+
+
+- (void)updateCompaniesFromJson:(NSArray *)companies
+{
+    for (NSDictionary *meetingJson in companies) {
+        [ParseUtil companyFromJson:meetingJson];
+    }
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 
@@ -108,7 +132,7 @@ NSString * const IdKey = @"profileid";
     
     NSString *placeName = me.place.name;
     placeName = placeName ? placeName : @"";
-    NSDictionary *params = @{IdKey : @(541), PlaceKey : placeName, TimeKey : timeString};
+    NSDictionary *params = @{ProfileIdKey : @(541), PlaceKey : placeName, TimeKey : timeString};
     
     AFHTTPRequestOperation *operation = [self GET:SendTimeAndPlaceUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         onComplete(nil, nil);
@@ -118,6 +142,44 @@ NSString * const IdKey = @"profileid";
 
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", @"text/json", nil];
+    [operation start];
+}
+
+
+- (void)peopleToInviteWithCompletionHandler:(EUCompletionHandler)onComplete
+{
+    __weak typeof(self) weakSelf = self;
+    AFHTTPRequestOperation *operation = [self GET:PeopleUrl parameters:@{IdKey : @(541)} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [weakSelf updatePeopleFromJson:responseObject];
+        onComplete(nil, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        onComplete(nil, error);
+    }];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", nil];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation start];
+}
+
+
+- (void)updatePeopleFromJson:(NSArray *)json
+{
+    for (NSDictionary *personJson in json) {
+        Person *person = [ParseUtil personFromJson:personJson];
+        person.isPref = @(YES);
+    }
+}
+
+- (void)joinCompany:(NSNumber *)companyId withCompletionHandler:(EUCompletionHandler)onComplete
+{
+    AFHTTPRequestOperation *operation = [self GET:JoinUrl parameters:@{IdKey : @(541), MeetingIdKey : companyId} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        onComplete(nil, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        onComplete(nil, error);
+    }];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", nil];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation start];
 }
 

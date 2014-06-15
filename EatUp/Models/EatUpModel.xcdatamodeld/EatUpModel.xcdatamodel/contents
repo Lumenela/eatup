@@ -18,6 +18,8 @@
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="imageURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isPref" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isSelected" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="company" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Company" inverseName="person" inverseEntity="Company" syncable="YES"/>
@@ -28,8 +30,8 @@
     </entity>
     <elements>
         <element name="Company" positionX="0" positionY="0" width="128" height="103"/>
-        <element name="Person" positionX="0" positionY="0" width="128" height="103"/>
-        <element name="Place" positionX="0" positionY="0" width="128" height="75"/>
         <element name="Me" positionX="36" positionY="63" width="128" height="163"/>
+        <element name="Person" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="Place" positionX="0" positionY="0" width="128" height="75"/>
     </elements>
 </model>
