@@ -60,7 +60,7 @@ NSString * const PersonKeyName = @"FullName";
     NSString *time = [json objectForKey:MeKeyTime];
     me.time = [formatter dateFromString:time];
     if (!me.time) {
-        me = [NSDate date];
+        me.time = [NSDate date];
     }
     
     NSString *startDate = [json objectForKey:MeKeyStartTime];

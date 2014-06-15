@@ -77,7 +77,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 - (void)updateTimeAndPlace
 {
     Me *me = ApplicationDelegate.me;
-    self.selectedDate = me.time ? me.time : [NSDate date];
+    self.selectedDate = me.time;
     self.selectedPlace = me.place ? me.place : nil;
     
     self.places = [Place MR_findAll];
@@ -91,6 +91,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
     
     ApplicationDelegate.me.time = date;
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [self.tableView reloadData];
 }
 
 
@@ -137,7 +138,6 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
             if (!cell) {
                 cell = [[TimeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TimeCellId];
             }
-            // load last time
             cell.time = self.selectedDate;
             self.timeCell = cell;
             return cell;
@@ -152,6 +152,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
             cell.place = place.name;
             if ([place.name isEqualToString:self.selectedPlace.name]) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
             } else {
                 cell.accessoryType = UITableViewCellAccessoryNone;
             }
@@ -175,8 +176,9 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
             self.selectedPlace = place;
             ApplicationDelegate.me.place = place;
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            [self.tableView reloadData];
+           /* UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;*/
             break;
         }
         case SectionIndexFind: {
@@ -193,11 +195,11 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
             break;
         }
         case SectionIndexPlace: {
-            self.selectedPlace = nil;
+           /* self.selectedPlace = nil;
             ApplicationDelegate.me.place = nil;
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.accessoryType = UITableViewCellAccessoryNone;*/
             break;
         }
         case SectionIndexFind: {

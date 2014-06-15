@@ -14,11 +14,11 @@
 
 NSString * const ProfileInfoURL = @"http://10.168.0.255/Cmd.EatUp/Employees/getprofileinfo";
 NSString * const PlacesUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/getplaces";
-NSString * const SendTimeAndPlaceUrl = @"10.168.0.255/Cmd.EatUp/Employees/ChangePlaceAndTime";
+NSString * const SendTimeAndPlaceUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/ChangePlaceAndTime";
 
 NSString * const TimeKey = @"time";
 NSString * const PlaceKey = @"placeName";
-NSString * const IdKey = @"id";
+NSString * const IdKey = @"profileid";
 
 
 @implementation EatUpService
@@ -106,16 +106,18 @@ NSString * const IdKey = @"id";
     formatter.dateFormat = DateFormat;
     NSString *timeString = [formatter stringFromDate:me.time];
     
-    NSDictionary *params = @{IdKey : @(541), PlaceKey : me.place.name, TimeKey : timeString};
+    NSString *placeName = me.place.name;
+    placeName = placeName ? placeName : @"";
+    NSDictionary *params = @{IdKey : @(541), PlaceKey : placeName, TimeKey : timeString};
     
     AFHTTPRequestOperation *operation = [self GET:SendTimeAndPlaceUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         onComplete(nil, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@", error);
         onComplete(nil, error);
     }];
-    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", nil];
+
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", @"text/json", nil];
     [operation start];
 }
 

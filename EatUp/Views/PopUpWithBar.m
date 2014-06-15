@@ -19,6 +19,12 @@
     return self;
 }
 
+- (void)setDate:(NSDate *)date
+{
+    _date = date;
+    self.datePicker.date = date;
+}
+
 - (IBAction)dateChanged:(UIDatePicker *)datePicker
 {
     [self.delegate didPickDate:datePicker.date];
