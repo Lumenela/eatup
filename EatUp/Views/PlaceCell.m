@@ -22,17 +22,12 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        //self.checkbox = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
-        // [self setupCheckbox];
     }
     return self;
 }
 
 - (void)awakeFromNib
 {
-    //    self.checkbox = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
-    //[self setupCheckbox];
-    //self.accessoryView = self.checkbox;
 }
 
 - (void)setupCheckbox
@@ -54,10 +49,10 @@
     // Configure the view for the selected state
 }
 
-- (void)setPlace:(NSString *)place
+- (void)setPlace:(Place *)place
 {
     _place = place;
-    self.nameLabel.text = place;
+    self.nameLabel.text = place.name;
 }
 
 @end

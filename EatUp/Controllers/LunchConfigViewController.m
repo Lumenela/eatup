@@ -32,10 +32,8 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) NSArray *places;
-@property (nonatomic, strong) Place *selectedPlace;
 
 @property (nonatomic, strong) PopUpWithBar *pickerPopUp;
-@property (nonatomic, strong) NSDate *selectedDate;
 @property (nonatomic, strong) TimeCell *timeCell;
 
 @end
@@ -76,19 +74,13 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 
 - (void)updateTimeAndPlace
 {
-    Me *me = ApplicationDelegate.me;
-    self.selectedDate = me.time;
-    self.selectedPlace = me.place ? me.place : nil;
-    
     self.places = [Place MR_findAll];
     [self.tableView reloadData];
 }
 
 - (void)didPickDate:(NSDate *)date
 {
-    self.selectedDate = date;
     self.timeCell.time = date;
-    
     ApplicationDelegate.me.time = date;
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     [self.tableView reloadData];
@@ -138,7 +130,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
             if (!cell) {
                 cell = [[TimeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TimeCellId];
             }
-            cell.time = self.selectedDate;
+            cell.time = ApplicationDelegate.me.time;
             self.timeCell = cell;
             return cell;
         }
@@ -149,8 +141,8 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
                 cell = [[PlaceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PlaceCellId];
             }
             Place *place = [self.places objectAtIndex:indexPath.row];
-            cell.place = place.name;
-            if ([place.name isEqualToString:self.selectedPlace.name]) {
+            cell.place = place;
+            if ([place.name isEqualToString:ApplicationDelegate.me.place.name]) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
                 [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
             } else {
@@ -167,13 +159,12 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 {    
     switch (indexPath.section) {
         case SectionIndexTime: {
-            self.pickerPopUp.date = self.selectedDate;
+            self.pickerPopUp.date = ApplicationDelegate.me.time;
             [self.pickerPopUp show];
             break;
         }
         case SectionIndexPlace: {
             Place *place = [self.places objectAtIndex:indexPath.row];
-            self.selectedPlace = place;
             ApplicationDelegate.me.place = place;
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
             [self.tableView reloadData];
@@ -285,5 +276,11 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 
 @end

@@ -11,6 +11,7 @@
 #import "StyleUtil.h"
 #import "EatUpService.h"
 #import "LAppDelegate.h"
+#import "Place.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
 
@@ -43,12 +44,12 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.companies = [Company MR_findAll];
+    self.companies = [Company MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"place.name == %@", ApplicationDelegate.me.place.name]];
     
     [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
     __weak typeof(self) weakSelf = self;
     [[EatUpService sharedInstance] companiesWithCompletionHandler:^(id data, NSError *error) {
-        weakSelf.companies = [Company MR_findAll];
+        weakSelf.companies = [Company MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"place.name == %@", ApplicationDelegate.me.place.name]];
         [weakSelf.tableView reloadData];
         [MBProgressHUD hideAllHUDsForView:ApplicationDelegate.window animated:YES];
     }];

@@ -126,13 +126,22 @@ NSNumber * const MeetingIdKey = @"meetingId";
 {
     Me *me = ApplicationDelegate.me;
 
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params setObject:@(541) forKey:ProfileIdKey];
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = DateFormat;
     NSString *timeString = [formatter stringFromDate:me.time];
     
+    if (timeString) {
+        [params setObject:timeString forKey:TimeKey];
+    }
+
     NSString *placeName = me.place.name;
     placeName = placeName ? placeName : @"";
-    NSDictionary *params = @{ProfileIdKey : @(541), PlaceKey : placeName, TimeKey : timeString};
+    if (placeName) {
+        [params setObject:placeName forKey:PlaceKey];
+    }
     
     AFHTTPRequestOperation *operation = [self GET:SendTimeAndPlaceUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         onComplete(nil, nil);

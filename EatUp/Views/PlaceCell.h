@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Place.h"
 
 @interface PlaceCell : UITableViewCell
 
-@property (nonatomic, strong) NSString *place;
+@property (nonatomic, strong) Place *place;
 
 @end

@@ -7,13 +7,14 @@
 //
 
 #import "PopUpView.h"
+#import "Place.h"
 
 @protocol PlacePickerDelegate;
 @interface PlacePicker : PopUpView
 
 @property (nonatomic, weak) IBOutlet UIButton *doneButton;
 @property (nonatomic, weak) IBOutlet UIPickerView *picker;
-@property (nonatomic, strong) NSString *place;
+@property (nonatomic, strong) Place *place;
 @property (nonatomic, weak) id<PlacePickerDelegate> delegate;
 
 @end
@@ -21,6 +22,6 @@
 
 @protocol PlacePickerDelegate<NSObject>
 
-- (void)didPickPlace:(NSString *)place;
+- (void)didPickPlace:(Place *)place;
 
 @end

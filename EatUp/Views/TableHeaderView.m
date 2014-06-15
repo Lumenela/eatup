@@ -44,6 +44,15 @@
             view.label.text = @"МЕСТО";
             break;
         }
+        case TableHeaderStyleAllPeople: {
+            view.icon.image = nil;
+            view.label.text = @"ВСЕ КОЛЛЕГИ";
+            break;
+        }
+        case TableHeaderStyleinvited: {
+            view.icon.image = nil;
+            view.label.text = @"ПРИГЛАШЕННЫЕ";
+        }
     }
     return view;
 }

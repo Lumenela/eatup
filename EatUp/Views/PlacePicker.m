@@ -7,6 +7,7 @@
 //
 
 #import "PlacePicker.h"
+#import "Place.h"
 
 @interface PlacePicker()<UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -29,14 +30,14 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.places = @[@"Rest room", @"Лидо", @"Налибоки", @"Колесо"];
+    self.places = [Place MR_findAll];
 }
 
 
 - (IBAction)done:(id)sender
 {
     NSInteger row = [self.picker selectedRowInComponent:0];
-    NSString *place = [self.places objectAtIndex:row];
+    Place *place = [self.places objectAtIndex:row];
     [self.delegate didPickPlace:place];
     [self hide];
 }
@@ -56,14 +57,14 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    NSString *place = [self.places objectAtIndex:row];
-    return place;
+    Place *place = [self.places objectAtIndex:row];
+    return place.name;
 }
 
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    NSString *place = [self.places objectAtIndex:row];
+    Place *place = [self.places objectAtIndex:row];
     [self.delegate didPickPlace:place];
 }
 

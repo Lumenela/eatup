@@ -19,6 +19,7 @@ NSString * const MeKeyStartTime = @"StartPreferredTime";
 NSString * const MeKeyEndTime = @"FinishPreferredTime";
 NSString * const MeKeyMeeting = @"CurrentMeeting";
 NSString * const MeKeyImagePath = @"ImagePath";
+NSString * const MeKeyPlace = @"PlaceName";
 
 NSString * const CompanyKeyId = @"Id";
 NSString * const CompanyKeyDate = @"Date";
@@ -75,6 +76,8 @@ NSString * const PersonKeyName = @"FullName";
         me.meeting = [ParseUtil companyFromJson:meetingJson];
     }
     
+    me.place = [ParseUtil placeFromJson:json];
+
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     return me;
 }
@@ -129,6 +132,8 @@ NSString * const PersonKeyName = @"FullName";
     person.userId = personId;
     person.name = [json objectForKey:PersonKeyName];
     person.imageURLString = [json objectForKey:@"ImageUrl"];
+    person.isSelected = @(NO);
+    person.isPref = @(NO);
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     return person;
 }
@@ -137,6 +142,9 @@ NSString * const PersonKeyName = @"FullName";
 + (Place *)placeFromJson:(NSDictionary *)json
 {
     NSString *name = [json objectForKey:PlaceKeyName];
+    if (!name || [name isEqual:[NSNull null]]) {
+        return nil;
+    }
     Place *place;
     NSArray *places = [Place MR_findByAttribute:@"name" withValue:name];
     if (places.count > 0) {

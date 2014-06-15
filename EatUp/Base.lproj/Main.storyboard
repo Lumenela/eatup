@@ -303,10 +303,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vG6-lR-ywH">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vG6-lR-ywH">
+                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="2it-Yu-e0I"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" rowHeight="63" id="MY8-cC-bLO" customClass="PersonCell">
                                         <rect key="frame" x="0.0" y="86" width="320" height="63"/>
@@ -353,6 +356,11 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="vG6-lR-ywH" secondAttribute="bottom" id="QJP-pA-iPS"/>
+                            <constraint firstAttribute="trailing" secondItem="vG6-lR-ywH" secondAttribute="trailing" id="SKf-IX-UhM"/>
+                            <constraint firstItem="vG6-lR-ywH" firstAttribute="top" secondItem="Mhk-AI-yQx" secondAttribute="top" constant="65" id="nvy-tK-7yQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Пригласить коллег" id="sLF-kS-jyM"/>
                     <connections>

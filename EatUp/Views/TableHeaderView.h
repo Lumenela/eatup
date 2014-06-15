@@ -10,7 +10,9 @@
 
 typedef NS_ENUM(NSInteger, TableHeaderStyle) {
     TableHeaderStyleTime = 0,
-    TableHeaderStylePlace = 1
+    TableHeaderStylePlace = 1,
+    TableHeaderStyleAllPeople = 2,
+    TableHeaderStyleinvited = 3
 };
 
 @interface TableHeaderView : UIView
