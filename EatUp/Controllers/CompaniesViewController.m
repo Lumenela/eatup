@@ -86,6 +86,7 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
             }
             Company *company = [self.companies objectAtIndex:indexPath.row];
             cell.company = company;
+            cell.delegate = self;
             return cell;
         }
         case SectionIndexFind: {
@@ -148,8 +149,13 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 
 - (void)joinCompany:(Company *)company
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"EatUp" message:@"Поздравляем! Вы идете в Лидо в 14:00 в компании" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+    [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
+    __weak typeof(self) weakSelf = self;
+    [[EatUpService sharedInstance] joinCompany:company.companyId withCompletionHandler:^(id data, NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:ApplicationDelegate.window animated:YES];
+        ApplicationDelegate.needRefreshProfile = YES;
+        [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+    }];
 }
 
 @end

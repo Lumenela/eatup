@@ -201,7 +201,7 @@
                   symbolName = "-[EatUpService peopleToInviteWithCompletionHandler:]"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424501141.339911"
+                  timestampString = "424501449.599702"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -215,7 +215,7 @@
                   symbolName = "__52-[EatUpService peopleToInviteWithCompletionHandler:]_block_invoke"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424501141.340244"
+                  timestampString = "424501449.599992"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -311,7 +311,7 @@
                   symbolName = "-[EatUpService inviteWithCompletionHandler:]"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424501141.344439"
+                  timestampString = "424501449.672643"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "213"
@@ -325,7 +325,7 @@
                   symbolName = "__44-[EatUpService inviteWithCompletionHandler:]_block_invoke"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424501141.34479"
+                  timestampString = "424501449.672957"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "213"
@@ -412,6 +412,22 @@
             startingLineNumber = "63"
             endingLineNumber = "63"
             landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EatUp/Views/CompanyCell.m"
+            timestampString = "424501434.763096"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-join:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
