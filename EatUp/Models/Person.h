@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSNumber * userId;
 @property (nonatomic, retain) NSNumber * isPref;
 @property (nonatomic, retain) NSNumber * isSelected;
+@property (nonatomic, retain) NSNumber * index;
 @property (nonatomic, retain) NSSet *company;
 @end
 

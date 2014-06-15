@@ -23,10 +23,8 @@
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) PopUpWithBar *timePicker;
-@property (nonatomic, strong) NSDate *time;
 @property (nonatomic, strong) TimePlaceHeaderView *timePlaceHeader;
 @property (nonatomic, strong) PlacePicker *placePicker;
-@property (nonatomic, strong) Place *place;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
@@ -63,10 +61,6 @@
     [self.placePicker setDisablesScreen:YES];
     [self.view addSubview:self.placePicker];
     
-    self.fetchedResultsController = [Person MR_fetchAllGroupedBy:@"isSelected" withPredicate:[NSPredicate predicateWithFormat:@"isPref = YES"] sortedBy:nil ascending:NO];
-    self.fetchedResultsController.delegate = self;
-    [self.tableView reloadData];
-    
     [self createTimePlaceView];
     [self.view addSubview:self.timePlaceHeader];
     
@@ -78,7 +72,12 @@
 {
     [super viewDidAppear:animated];
     [MBProgressHUD showHUDAddedTo:ApplicationDelegate.window animated:YES];
+    __weak typeof(self) weakSelf = self;
     [[EatUpService sharedInstance] peopleToInviteWithCompletionHandler:^(id data, NSError *error) {
+        weakSelf.fetchedResultsController = [Person MR_fetchAllGroupedBy:@"isSelected" withPredicate:[NSPredicate predicateWithFormat:@"isPref = YES"] sortedBy:@"index" ascending:YES];
+        weakSelf.fetchedResultsController.delegate = self;
+        [weakSelf.tableView reloadData];
+
         [MBProgressHUD hideHUDForView:ApplicationDelegate.window animated:YES];
     }];
 }
@@ -86,7 +85,7 @@
 
 - (void)invitePerson:(Person *)person
 {
-    person.isSelected = @(YES);
+    person.isSelected = @(!person.isSelected.boolValue);
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
@@ -191,6 +190,7 @@
         PersonCell *personCell = (PersonCell *)cell;
         Person *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
         personCell.person = person;
+        personCell.delegate = self;
         personCell.canInvitePeople = [self canInviteSomeone];
     }
 }
@@ -219,7 +219,7 @@
 
 - (BOOL)canInviteSomeone
 {
-    return self.place && self.time;
+    return ApplicationDelegate.me.place && ApplicationDelegate.me.time;
 }
 
 
@@ -297,7 +297,6 @@
 
 - (void)didPickPlace:(Place *)place
 {
-    self.place = place;
     self.timePlaceHeader.place = place.name;
     ApplicationDelegate.me.place = place;
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];

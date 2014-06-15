@@ -16,14 +16,14 @@ NSString * const ProfileInfoURL = @"http://10.168.0.255/Cmd.EatUp/Employees/getp
 NSString * const PlacesUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/getplaces";
 NSString * const SendTimeAndPlaceUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/ChangePlaceAndTime";
 NSString * const CompaniesUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/GetMeetings";
-NSString * const PeopleUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/GetMeetings";
+NSString * const PeopleUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/GetPreferablePeople";
 NSString * const JoinUrl = @"http://10.168.0.255/Cmd.EatUp/Employees/join";
 
 NSString * const TimeKey = @"time";
 NSString * const PlaceKey = @"placeName";
 NSString * const ProfileIdKey = @"profileid";
 NSString * const IdKey = @"id";
-NSNumber * const MeetingIdKey = @"meetingId";
+NSString * const MeetingIdKey = @"meetingId";
 
 
 @implementation EatUpService
@@ -165,7 +165,7 @@ NSNumber * const MeetingIdKey = @"meetingId";
         NSLog(@"%@", error);
         onComplete(nil, error);
     }];
-    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", nil];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"",@"application/json", @"text/json", nil];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation start];
 }
@@ -176,7 +176,9 @@ NSNumber * const MeetingIdKey = @"meetingId";
     for (NSDictionary *personJson in json) {
         Person *person = [ParseUtil personFromJson:personJson];
         person.isPref = @(YES);
+        person.index = [personJson objectForKey:@"Index"];
     }
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 - (void)joinCompany:(NSNumber *)companyId withCompletionHandler:(EUCompletionHandler)onComplete

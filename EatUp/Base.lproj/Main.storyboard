@@ -291,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="1072" y="872"/>
         </scene>
-        <!--Invite View Controller - Пригласить коллег-->
+        <!--Invite View Controller - Пригласить-->
         <scene sceneID="vZ9-Tu-Do8">
             <objects>
                 <viewController id="kbd-B1-Xhr" customClass="InviteViewController" sceneMemberID="viewController">
@@ -340,10 +340,12 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NXc-Zy-SQv">
                                                     <rect key="frame" x="14" y="9" width="45" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.97254901959999995" green="0.76078431369999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="inviteButton" destination="vJ6-ZN-Kf1" id="zDj-nD-hdj"/>
                                             <outlet property="nameLabel" destination="0hx-86-UOe" id="ftK-BM-ljx"/>
                                             <outlet property="photoView" destination="NXc-Zy-SQv" id="Cwh-EK-ICL"/>
                                         </connections>
@@ -362,7 +364,7 @@
                             <constraint firstItem="vG6-lR-ywH" firstAttribute="top" secondItem="Mhk-AI-yQx" secondAttribute="top" constant="65" id="nvy-tK-7yQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Пригласить коллег" id="sLF-kS-jyM"/>
+                    <navigationItem key="navigationItem" title="Пригласить" id="sLF-kS-jyM"/>
                     <connections>
                         <outlet property="tableView" destination="vG6-lR-ywH" id="CKc-7n-7dZ"/>
                     </connections>

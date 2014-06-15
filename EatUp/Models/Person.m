@@ -17,6 +17,7 @@
 @dynamic userId;
 @dynamic isPref;
 @dynamic isSelected;
+@dynamic index;
 @dynamic company;
 
 @end
