@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [StyleUtil loginBackgroundColor];
+    self.view.backgroundColor = [StyleUtil yellowColor];
 }
 
 
@@ -79,8 +79,8 @@
 {
     float keyboardOriginY = self.view.frame.size.height - KEYBOARD_HEIGHT;
     float margin = 5;
-    float newTextFieldOriginY = keyboardOriginY - textField.frame.size.height - margin;
-    float deltaOriginY = textField.frame.origin.y - newTextFieldOriginY;
+    float newTextFieldOriginY = keyboardOriginY - self.loginButton.frame.size.height - margin;
+    float deltaOriginY = self.loginButton.frame.origin.y - newTextFieldOriginY;
     if (deltaOriginY <= 0) {
         return;
     }
@@ -106,7 +106,13 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    if (textField == self.loginTextField) {
+        [textField resignFirstResponder];
+        [self.passwordTextField becomeFirstResponder];
+        return NO;
+    }
     [textField resignFirstResponder];
+    [self login:nil];
     return NO;
 }
 

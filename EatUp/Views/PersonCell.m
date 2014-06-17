@@ -31,7 +31,7 @@
     self.photoView.layer.cornerRadius = self.photoView.frame.size.width / 2;
     self.photoView.clipsToBounds = YES;
     self.photoView.layer.borderWidth = 2.0f;
-    self.photoView.layer.borderColor = [StyleUtil loginBackgroundColor].CGColor;
+    self.photoView.layer.borderColor = [StyleUtil blueColor].CGColor;
     self.photoView.backgroundColor = [UIColor blackColor];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCanInvite) name:CanInvitePeopleNotificationName object:nil];

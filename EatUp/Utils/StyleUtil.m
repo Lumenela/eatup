@@ -11,7 +11,7 @@
 
 @implementation StyleUtil
 
-+ (UIColor *)loginBackgroundColor
++ (UIColor *)blueColor
 {
     return [UIColor colorWithR:123 g:192 b:197];
 }
@@ -21,7 +21,7 @@
     return [UIColor colorWithR:248 g:194 b:81];
 }
 
-+ (UIColor *)darkColor
++ (UIColor *)darkVioletColor
 {
     return [UIColor colorWithR:87 g:65 b:77];
 }

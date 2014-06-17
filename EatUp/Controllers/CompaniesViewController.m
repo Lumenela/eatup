@@ -107,8 +107,8 @@ typedef NS_ENUM(NSInteger, SectionIndex) {
 {
     if (section == SectionIndexFind) {
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, -20, 320, 57)];
-        button.backgroundColor = [StyleUtil loginBackgroundColor];
-        NSDictionary *attributes = @{NSForegroundColorAttributeName : [StyleUtil darkColor], 
+        button.backgroundColor = [StyleUtil blueColor];
+        NSDictionary *attributes = @{NSForegroundColorAttributeName : [StyleUtil darkVioletColor], 
                                      NSFontAttributeName : [StyleUtil bigTitleFont]};
         NSAttributedString *text = [[NSAttributedString alloc] initWithString:@"Пригласить коллег" attributes:attributes];
         button.contentMode = UIViewContentModeCenter;

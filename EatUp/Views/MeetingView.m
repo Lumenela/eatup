@@ -10,11 +10,12 @@
 #import "Place.h"
 #import "PersonInCompanyCell.h"
 #import "Person.h"
+#import "TimePlaceHeaderView.h"
 
-@interface MeetingView()<UICollectionViewDataSource>
+@interface MeetingView()<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet TimePlaceHeaderView *timePlaceView;
 @property (nonatomic, strong) NSArray *people;
 
 @end
@@ -35,25 +36,17 @@
 - (void)awakeFromNib
 {
     self.collectionView.dataSource = self;
-    self.descriptionLabel.text = @"";
+    self.collectionView.delegate = self;
 }
 
 
 - (void)setCompany:(Company *)company
 {
     _company = company;
-    [self.collectionView reloadData];
-    
-    NSString *place = company.place.name;
-    
-    NSDate *date = company.time;    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"HH:mm";
-    NSString *dateString = [formatter stringFromDate:date];
-    
-    self.descriptionLabel.text = [NSString stringWithFormat:@"%@, %@", place, dateString];
+    self.timePlaceView.place = company.place.name;
+    self.timePlaceView.date = company.time;
     self.people = company.person.allObjects;
-
+    [self.collectionView reloadData];
 }
 
 
@@ -74,6 +67,17 @@
     [cell setImageUrl:imageURL];
     
     return cell;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    float widthForAllPeople = 55 * self.people.count;
+    if (widthForAllPeople < collectionView.frame.size.width) {
+        float marginSide = (collectionView.frame.size.width - widthForAllPeople)/2;
+        UIEdgeInsets insets = UIEdgeInsetsMake(0, marginSide, 0, marginSide);
+        return insets;
+    }
+    return UIEdgeInsetsZero;
 }
 
 @end

@@ -6,22 +6,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EatUp/Communication/EatUpService.m"
-            timestampString = "424497134.079545"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-profileInfoWithCompletionHandler:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -201,7 +185,7 @@
                   symbolName = "-[EatUpService peopleToInviteWithCompletionHandler:]"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424510284.330633"
+                  timestampString = "424680656.218765"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -215,7 +199,7 @@
                   symbolName = "__52-[EatUpService peopleToInviteWithCompletionHandler:]_block_invoke"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424510284.330848"
+                  timestampString = "424680656.218972"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -311,7 +295,7 @@
                   symbolName = "-[EatUpService inviteWithCompletionHandler:]"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424510284.334347"
+                  timestampString = "424680656.2225"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "213"
@@ -325,7 +309,7 @@
                   symbolName = "__44-[EatUpService inviteWithCompletionHandler:]_block_invoke"
                   moduleName = "EatUp"
                   urlString = "file:///Users/lumenela/Projects/Startup/EatUp/EatUp/Communication/EatUpService.m"
-                  timestampString = "424510284.334575"
+                  timestampString = "424680656.222782"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "213"
@@ -460,6 +444,38 @@
             startingLineNumber = "68"
             endingLineNumber = "68"
             landmarkName = "-updateState"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EatUp/Controllers/LoginViewController.m"
+            timestampString = "424678901.600959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-login:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EatUp/Views/MeetingView.m"
+            timestampString = "424680607.019627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-collectionView:layout:insetForSectionAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

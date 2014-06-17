@@ -10,9 +10,9 @@
 
 @interface StyleUtil : NSObject
 
-+ (UIColor *)loginBackgroundColor;
++ (UIColor *)blueColor;
 + (UIColor *)yellowColor;
-+ (UIColor *)darkColor;
++ (UIColor *)darkVioletColor;
 
 + (UIFont *)headlineFont;
 + (UIFont *)bigTitleFont;

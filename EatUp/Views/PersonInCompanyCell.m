@@ -38,7 +38,7 @@
     self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2;
     self.imageView.clipsToBounds = YES;
     self.imageView.layer.borderWidth = 2.0f;
-    self.imageView.layer.borderColor = [StyleUtil loginBackgroundColor].CGColor;
+    self.imageView.layer.borderColor = [StyleUtil blueColor].CGColor;
 }
 
 - (void)setImageUrl:(NSString *)urlString
